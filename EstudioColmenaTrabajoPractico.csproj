@@ -1,0 +1,369 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1CC74AEB-77A7-456E-A78B-D67B92846106}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>EstudioColmenaTrabajoPractico</RootNamespace>
+    <AssemblyName>EstudioColmenaTrabajoPractico</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>packages\itextsharp.xmlworker.5.5.13.3\lib\itextsharp.xmlworker.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\VisualBasic.PowerPacks.Vs.1.0.0\lib\Microsoft.VisualBasic.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\VisualBasic.PowerPacks.Vs.1.0.0\lib\Microsoft.VisualBasic.PowerPacks.Vs.dll</HintPath>
+    </Reference>
+    <Reference Include="CircularProgressBar, Version=2.8.0.16, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>packages\CircularProgressBar.2.8.0.16\lib\net40\CircularProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WinFormAnimation, Version=1.6.0.4, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>packages\WinFormAnimation.1.6.0.4\lib\net40\WinFormAnimation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controlador\AsesorMetodos.cs" />
+    <Compile Include="Controlador\ClienteMetodos.cs" />
+    <Compile Include="Controlador\Departamento.cs" />
+    <Compile Include="Controlador\Localidad.cs" />
+    <Compile Include="Controlador\PresupuestoMetodos.cs" />
+    <Compile Include="Controlador\Provincia.cs" />
+    <Compile Include="Controlador\ProyectoMetodos.cs" />
+    <Compile Include="Controlador\ReunionMetodos.cs" />
+    <Compile Include="Controlador\TipologiaMetodos.cs" />
+    <Compile Include="Controlador\ObjAccDatos.cs" />
+    <Compile Include="Controlador\ModelodeUsuario.cs" />
+    <Compile Include="dsCRUD.cs">
+      <DependentUpon>dsCRUD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsCRUD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCRUD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsCRUDLogin.cs">
+      <DependentUpon>dsCRUDLogin.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsCRUDLogin.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCRUDLogin.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Asesor.cs" />
+    <Compile Include="Modelo\Cliente.cs" />
+    <Compile Include="Modelo\Coneccion.cs" />
+    <Compile Include="Modelo\Configuracion.cs" />
+    <Compile Include="Modelo\Cuenta.cs" />
+    <Compile Include="Modelo\Departamento.cs" />
+    <Compile Include="Modelo\IVA.cs" />
+    <Compile Include="Modelo\Localidad.cs" />
+    <Compile Include="Modelo\Login.cs" />
+    <Compile Include="Modelo\Operaciones.cs" />
+    <Compile Include="Modelo\Posicion.cs" />
+    <Compile Include="Modelo\Precio.cs" />
+    <Compile Include="Modelo\Presupuesto.cs" />
+    <Compile Include="Modelo\Presupuesto3.cs" />
+    <Compile Include="Modelo\Presupuesto2.cs" />
+    <Compile Include="Modelo\Provincia.cs" />
+    <Compile Include="Modelo\Proyecto.cs" />
+    <Compile Include="Modelo\Reunion.cs" />
+    <Compile Include="Modelo\ServidorEmailMaestro.cs" />
+    <Compile Include="Modelo\SistemSoportEmail.cs" />
+    <Compile Include="Modelo\Tipologia.cs" />
+    <Compile Include="Vista\FormularioInicial\frmInicial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormularioInicial\frmInicial.Designer.cs">
+      <DependentUpon>frmInicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vista\FormularioCliente\frmAgregacliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormularioCliente\frmAgregacliente.Designer.cs">
+      <DependentUpon>frmAgregacliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FormularioCliente\frmEliminaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormularioCliente\frmEliminaCliente.Designer.cs">
+      <DependentUpon>frmEliminaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FormularioCliente\frmListaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormularioCliente\frmListaCliente.Designer.cs">
+      <DependentUpon>frmListaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FormularioCliente\frmModificaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormularioCliente\frmModificaCliente.Designer.cs">
+      <DependentUpon>frmModificaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FormularioCliente\frmModificarClienteBuscado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormularioCliente\frmModificarClienteBuscado.Designer.cs">
+      <DependentUpon>frmModificarClienteBuscado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FormularioPresupuesto\frmPresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormularioPresupuesto\frmPresupuesto.Designer.cs">
+      <DependentUpon>frmPresupuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FormularioProyecto\frmModificarProyecto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormularioProyecto\frmModificarProyecto.Designer.cs">
+      <DependentUpon>frmModificarProyecto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FormularioProyecto\frmProyecto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormularioProyecto\frmProyecto.Designer.cs">
+      <DependentUpon>frmProyecto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FormularioReunion\frmControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormularioReunion\frmControl.Designer.cs">
+      <DependentUpon>frmControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FormularioReunion\frmEvento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormularioReunion\frmEvento.Designer.cs">
+      <DependentUpon>frmEvento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FormularioReunion\frmReuniones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormularioReunion\frmReuniones.Designer.cs">
+      <DependentUpon>frmReuniones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FormularioReunion\UserControlBlank.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\FormularioReunion\UserControlBlank.Designer.cs">
+      <DependentUpon>UserControlBlank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FormularioReunion\UserControlDays.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\FormularioReunion\UserControlDays.Designer.cs">
+      <DependentUpon>UserControlDays.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Formularios usuarios\frmagregausuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Formularios usuarios\frmagregausuario.Designer.cs">
+      <DependentUpon>frmagregausuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FormularioTipologiasProyecto\frmTipologia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormularioTipologiasProyecto\frmTipologia.Designer.cs">
+      <DependentUpon>frmTipologia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FormularioBienvenida\frmBienvenida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormularioBienvenida\frmBienvenida.Designer.cs">
+      <DependentUpon>frmBienvenida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FormularioLogin\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormularioLogin\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FormularioTipologiasProyecto\frmModificarTipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormularioTipologiasProyecto\frmModificarTipo.Designer.cs">
+      <DependentUpon>frmModificarTipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FormularioRecuperarContraseña\frmRecuperarContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormularioRecuperarContraseña\frmRecuperarContraseña.Designer.cs">
+      <DependentUpon>frmRecuperarContraseña.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FormularioRegistrarUsuario\frmRegistrarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormularioRegistrarUsuario\frmRegistrarUsuario.Designer.cs">
+      <DependentUpon>frmRegistrarUsuario.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Vista\FormularioInicial\frmInicial.resx">
+      <DependentUpon>frmInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormularioCliente\frmAgregacliente.resx">
+      <DependentUpon>frmAgregacliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormularioCliente\frmEliminaCliente.resx">
+      <DependentUpon>frmEliminaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormularioCliente\frmListaCliente.resx">
+      <DependentUpon>frmListaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormularioCliente\frmModificaCliente.resx">
+      <DependentUpon>frmModificaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormularioCliente\frmModificarClienteBuscado.resx">
+      <DependentUpon>frmModificarClienteBuscado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormularioPresupuesto\frmPresupuesto.resx">
+      <DependentUpon>frmPresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormularioProyecto\frmModificarProyecto.resx">
+      <DependentUpon>frmModificarProyecto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormularioProyecto\frmProyecto.resx">
+      <DependentUpon>frmProyecto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormularioReunion\frmControl.resx">
+      <DependentUpon>frmControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormularioReunion\frmEvento.resx">
+      <DependentUpon>frmEvento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormularioReunion\frmReuniones.resx">
+      <DependentUpon>frmReuniones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormularioReunion\UserControlBlank.resx">
+      <DependentUpon>UserControlBlank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormularioReunion\UserControlDays.resx">
+      <DependentUpon>UserControlDays.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Formularios usuarios\frmagregausuario.resx">
+      <DependentUpon>frmagregausuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormularioTipologiasProyecto\frmTipologia.resx">
+      <DependentUpon>frmTipologia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormularioBienvenida\frmBienvenida.resx">
+      <DependentUpon>frmBienvenida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormularioLogin\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormularioRecuperarContraseña\frmRecuperarContraseña.resx">
+      <DependentUpon>frmRecuperarContraseña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormularioRegistrarUsuario\frmRegistrarUsuario.resx">
+      <DependentUpon>frmRegistrarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormularioTipologiasProyecto\frmModificarTipo.resx">
+      <DependentUpon>frmModificarTipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="dsCRUD.xsc">
+      <DependentUpon>dsCRUD.xsd</DependentUpon>
+    </None>
+    <None Include="dsCRUD.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCRUD.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsCRUD.xss">
+      <DependentUpon>dsCRUD.xsd</DependentUpon>
+    </None>
+    <None Include="dsCRUDLogin.xsc">
+      <DependentUpon>dsCRUDLogin.xsd</DependentUpon>
+    </None>
+    <None Include="dsCRUDLogin.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCRUDLogin.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsCRUDLogin.xss">
+      <DependentUpon>dsCRUDLogin.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plantilla.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo_letras-768x105.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estudiocolmena.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
