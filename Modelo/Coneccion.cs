@@ -8,12 +8,12 @@ namespace EstudioColmenaTrabajoPractico.Modelo
         public Coneccion()
         {
             //connectionString = "Server = DESKTOP-EU2DK6D;DataBase=EstudioColmena; integrated security =true";
-           // connectionString = "Server = DANIELA\\SQLEXPRESS;DataBase=EstudioColmena; integrated security =true"; 
+            // connectionString = "Server = DANIELA\\SQLEXPRESS;DataBase=EstudioColmena; integrated security =true";
             //connectionString = "Server = TECWARE\\SQLEXPRESS;DataBase=EstudioColmena; integrated security =true";
 
             connectionString = "Server = localhost\\SQLEXPRESS;DataBase=EstudioColmena; integrated security =true";
         }
-        protected SqlConnection GetConnection()
+        public SqlConnection GetConnection()
         {
 
             return new SqlConnection(connectionString);

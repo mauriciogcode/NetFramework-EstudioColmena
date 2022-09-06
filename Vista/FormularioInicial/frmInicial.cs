@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using EstudioColmenaTrabajoPractico.Vista;
 
 
 
@@ -21,18 +13,18 @@ namespace EstudioColmenaTrabajoPractico.Modelo
             InitializeComponent();
         }
 
-      
-       
+
+
         private void Form1_Load(object sender, EventArgs e)
         {
             //REVISAR ESTA PARTE DEL CODIGO
 
-             
+
 
             //MessageBox.Show("Test");
             LoadUserData();
             //Permisos
-            if (Login.Posicion == Posicion.Arquitecto)
+            if (Login.NivelAcceso == Posicion.Arquitecto)
             {
 
                 btnPresupuesto.Enabled = false;
@@ -45,8 +37,8 @@ namespace EstudioColmenaTrabajoPractico.Modelo
         {
 
             //REVISAR ESTA PARTE DEL CODIGO
-           lblName.Text = Login.Nombre + ", " + Login.Apellido;
-            lblPosition.Text = Login.Posicion;
+            lblName.Text = Login.Nombre + ", " + Login.Apellido;
+            lblPosition.Text = Login.NivelAcceso;
             lblEmail.Text = Login.Email;
 
         }
@@ -69,13 +61,13 @@ namespace EstudioColmenaTrabajoPractico.Modelo
             reu.Show();
         }
 
-      
+
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
             LoadUserData();
             //Permisos
-            if (Login.Posicion == Posicion.Arquitecto)
+            if (Login.NivelAcceso == Posicion.Arquitecto)
             {
                 btnPresupuesto.Enabled = false;
 
@@ -86,7 +78,7 @@ namespace EstudioColmenaTrabajoPractico.Modelo
         {
             LoadUserData();
             //Permisos
-            if (Login.Posicion == Posicion.Arquitecto)
+            if (Login.NivelAcceso == Posicion.Arquitecto)
             {
                 btnPresupuesto.Enabled = false;
 
@@ -97,7 +89,7 @@ namespace EstudioColmenaTrabajoPractico.Modelo
         {
             LoadUserData();
             //Permisos
-            if (Login.Posicion == Posicion.Arquitecto)
+            if (Login.NivelAcceso == Posicion.Arquitecto)
             {
                 btnPresupuesto.Enabled = false;
 
@@ -108,7 +100,7 @@ namespace EstudioColmenaTrabajoPractico.Modelo
         {
             LoadUserData();
             //Permisos
-            if (Login.Posicion == Posicion.Arquitecto)
+            if (Login.NivelAcceso == Posicion.Arquitecto)
             {
                 btnPresupuesto.Enabled = false;
 
@@ -130,7 +122,7 @@ namespace EstudioColmenaTrabajoPractico.Modelo
             LOGIN lOGIN = new LOGIN();
             lOGIN.Close();
             this.Close();
-           
+
         }
 
         private void btnClientes_Click(object sender, EventArgs e)

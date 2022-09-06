@@ -1,7 +1,6 @@
-﻿using System;
+﻿using EstudioColmenaTrabajoPractico.Modelo;
+using System;
 using System.Windows.Forms;
-using EstudioColmenaTrabajoPractico.Modelo;
-using EstudioColmenaTrabajoPractico.Controlador;
 
 
 namespace EstudioColmenaTrabajoPractico.Vista.Formularios_cliente
@@ -22,9 +21,9 @@ namespace EstudioColmenaTrabajoPractico.Vista.Formularios_cliente
             dsCRUDTableAdapters.Cliente1TableAdapter ta = new dsCRUDTableAdapters.Cliente1TableAdapter();
             dsCRUD.Cliente1DataTable dt = ta.GetData();
 
-           
+
         }
-        
+
 
         private void btnModificar_Click_1(object sender, EventArgs e)
         {
@@ -63,13 +62,10 @@ namespace EstudioColmenaTrabajoPractico.Vista.Formularios_cliente
                 TxtOcupacion.Text = row.Ocupacion;
                 TxtTelefono.Text = row.Telefono;
                 lblId.Text = row.IdCliente.ToString();
-                
-                                   
-                                            
-                              
+
             }
 
-            
+
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -77,9 +73,6 @@ namespace EstudioColmenaTrabajoPractico.Vista.Formularios_cliente
             this.Close();
         }
 
-      
-
-    
 
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
@@ -103,7 +96,7 @@ namespace EstudioColmenaTrabajoPractico.Vista.Formularios_cliente
         {
             Provincia oProvinciaSeleccionado = (Provincia)cboProvincia.SelectedItem;
 
-            cboDepartamento.DataSource = new Operaciones().ObtenerDepartamento(oProvinciaSeleccionado.CodigoProvincia);
+            cboDepartamento.DataSource = new Operaciones().ObtenerDepartamento(oProvinciaSeleccionado.IdProvincia);
             cboDepartamento.ValueMember = "CodigoDepartamento";
             cboDepartamento.DisplayMember = "Nombre";
 
@@ -113,7 +106,7 @@ namespace EstudioColmenaTrabajoPractico.Vista.Formularios_cliente
         {
             Departamento oDepartamentoSeleccionada = (Departamento)cboDepartamento.SelectedItem;
 
-            cboLocalidad.DataSource = new Operaciones().ObtenerLocalidad(oDepartamentoSeleccionada.CodigoDepartamento);
+            cboLocalidad.DataSource = new Operaciones().ObtenerLocalidad(oDepartamentoSeleccionada.IdDepartamento);
             cboLocalidad.ValueMember = "CodigoLocalidad";
             cboLocalidad.DisplayMember = "Nombre";
 

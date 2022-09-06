@@ -1,26 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using EstudioColmenaTrabajoPractico.Controlador;
-using EstudioColmenaTrabajoPractico.Modelo;
 
 
 namespace EstudioColmenaTrabajoPractico.Vista
 {
-    public partial class frmBienvenida : Form 
+    public partial class frmBienvenida : Form
     {
         public frmBienvenida()
         {
             InitializeComponent();
         }
 
-        
+
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -46,7 +37,7 @@ namespace EstudioColmenaTrabajoPractico.Vista
 
         private void frmBienvenida_Load(object sender, EventArgs e)
         {
-            lblPosicion.Text = Login.Posicion;
+            lblPosicion.Text = Login.NivelAcceso;
             lblNombre.Text = Login.Nombre + ", " + Login.Apellido;
 
             this.Opacity = 0.0;

@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using EstudioColmenaTrabajoPractico.Modelo;
+using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace EstudioColmenaTrabajoPractico.Controlador
 {
@@ -95,7 +93,7 @@ namespace EstudioColmenaTrabajoPractico.Controlador
 
         #region Datos
 
-        public void CrearCliente(Modelo.Cliente cl)
+        public void CrearCliente(Cliente cl)
         {
             try
             {
@@ -126,9 +124,9 @@ namespace EstudioColmenaTrabajoPractico.Controlador
                 com.Parameters.Add(new SqlParameter("@altura", cl.Altura));
                 com.Parameters.Add(new SqlParameter("@piso", cl.Piso));
                 com.Parameters.Add(new SqlParameter("@barrio", cl.Barrio));
-                com.Parameters.Add(new SqlParameter("@departamento", cl.Departamento));
-                com.Parameters.Add(new SqlParameter("@provincia", cl.Provincia));
-                com.Parameters.Add(new SqlParameter("@localidad", cl.Localidad));
+                com.Parameters.Add(new SqlParameter("@departamento", cl.Depto));
+                com.Parameters.Add(new SqlParameter("@provincia", cl.IdProvincia));
+                com.Parameters.Add(new SqlParameter("@localidad", cl.IdProvincia));
                 com.Parameters.Add(new SqlParameter("@email", cl.Email));
 
                 com.ExecuteNonQuery();

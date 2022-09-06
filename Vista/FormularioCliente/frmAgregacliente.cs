@@ -1,8 +1,6 @@
-﻿using System;
+﻿using EstudioColmenaTrabajoPractico.Modelo;
+using System;
 using System.Windows.Forms;
-using EstudioColmenaTrabajoPractico.Vista.Formularios_cliente;
-using EstudioColmenaTrabajoPractico.Modelo;
-using EstudioColmenaTrabajoPractico.Controlador;
 
 
 namespace EstudioColmenaTrabajoPractico.Vista.Formularios_cliente
@@ -18,7 +16,7 @@ namespace EstudioColmenaTrabajoPractico.Vista.Formularios_cliente
         {
             dsCRUDTableAdapters.Cliente1TableAdapter ta = new dsCRUDTableAdapters.Cliente1TableAdapter();
 
-            ta.CrearCliente(TxtDocumento.Text.Trim(), TxtApellido.Text.Trim(), TxtNombre.Text.Trim(), cboProvincia.Text.Trim(),cboDepartamento.Text.Trim(), cboLocalidad.Text.Trim(), TxtBarrio.Text.Trim(),TxtCalle.Text.Trim(), TxtAltura.Text.Trim(), TxtPiso.Text.Trim(), txtDepto.Text.Trim(), TxtMail.Text.Trim(), TxtOcupacion.Text.Trim(),TxtTelefono.Text.Trim());
+            ta.CrearCliente(TxtDocumento.Text.Trim(), TxtApellido.Text.Trim(), TxtNombre.Text.Trim(), cboProvincia.Text.Trim(), cboDepartamento.Text.Trim(), cboLocalidad.Text.Trim(), TxtBarrio.Text.Trim(), TxtCalle.Text.Trim(), TxtAltura.Text.Trim(), TxtPiso.Text.Trim(), txtDepto.Text.Trim(), TxtMail.Text.Trim(), TxtOcupacion.Text.Trim(), TxtTelefono.Text.Trim());
 
             Refrescar();
         }
@@ -60,7 +58,7 @@ namespace EstudioColmenaTrabajoPractico.Vista.Formularios_cliente
                 frmModificaCliente modificaCliente = new frmModificaCliente(Id);
                 modificaCliente.ShowDialog();
                 Refrescar();
-            }            
+            }
         }
 
         private void Agregacliente_Load(object sender, EventArgs e)
@@ -124,7 +122,7 @@ namespace EstudioColmenaTrabajoPractico.Vista.Formularios_cliente
         {
             Provincia oProvinciaSeleccionado = (Provincia)cboProvincia.SelectedItem;
 
-            cboDepartamento.DataSource = new Operaciones().ObtenerDepartamento(oProvinciaSeleccionado.CodigoProvincia);
+            cboDepartamento.DataSource = new Operaciones().ObtenerDepartamento(oProvinciaSeleccionado.IdProvincia);
             cboDepartamento.ValueMember = "CodigoDepartamento";
             cboDepartamento.DisplayMember = "Nombre";
 
@@ -132,9 +130,9 @@ namespace EstudioColmenaTrabajoPractico.Vista.Formularios_cliente
 
         private void cboDepartamento_SelectedIndexChanged(object sender, EventArgs e)
         {
-           Departamento oDepartamentoSeleccionada = (Departamento)cboDepartamento.SelectedItem;
+            Departamento oDepartamentoSeleccionada = (Departamento)cboDepartamento.SelectedItem;
 
-            cboLocalidad.DataSource = new Operaciones().ObtenerLocalidad(oDepartamentoSeleccionada.CodigoDepartamento);
+            cboLocalidad.DataSource = new Operaciones().ObtenerLocalidad(oDepartamentoSeleccionada.IdDepartamento);
             cboLocalidad.ValueMember = "CodigoLocalidad";
             cboLocalidad.DisplayMember = "Nombre";
 

@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EstudioColmenaTrabajoPractico.Modelo;
-using System.Data;
-using System.Data.SqlClient;
-using EstudioColmenaTrabajoPractico.Controlador;
+﻿using EstudioColmenaTrabajoPractico.Modelo;
 
 namespace EstudioColmenaTrabajoPractico.Controlador
 {
-    public class ModelodeUsuario 
+    public class ModelodeUsuario
     {
         ObjAccDatos usuario = new ObjAccDatos();
 
@@ -60,11 +52,11 @@ namespace EstudioColmenaTrabajoPractico.Controlador
         public void AnyMethod()
         {
             //Seguridad y Permisos
-            if (Login.Posicion == Posicion.Administrador)
+            if (Login.NivelAcceso == Posicion.Administrador)
             {
                 //Codes
             }
-            if (Login.Posicion == Posicion.Arquitecto /*|| UserCache.Position == Positions.Compras || UserCache.Position == Positions.Arquitecto*/)
+            if (Login.NivelAcceso == Posicion.Arquitecto /*|| UserCache.Position == Positions.Compras || UserCache.Position == Positions.Arquitecto*/)
             {
                 //Codes
             }

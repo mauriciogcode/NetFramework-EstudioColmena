@@ -1,11 +1,7 @@
-﻿using System;
+﻿using EstudioColmenaTrabajoPractico.Modelo;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EstudioColmenaTrabajoPractico.Modelo;
 
 namespace EstudioColmenaTrabajoPractico.Controlador
 {
@@ -47,7 +43,7 @@ namespace EstudioColmenaTrabajoPractico.Controlador
                     command.CommandType = CommandType.Text;
                     SqlDataReader reader = command.ExecuteReader();
 
-                    
+
                     if (reader.HasRows)
                     {
                         while (reader.Read())
@@ -55,10 +51,10 @@ namespace EstudioColmenaTrabajoPractico.Controlador
 
                             Login.IdUsuario = reader.GetInt32(0);
                             Login.Usuario = reader.GetString(1);
-                           Login.Contraseña = reader.GetString(2);
+                            Login.Contraseña = reader.GetString(2);
                             Login.Nombre = reader.GetString(5);
                             Login.Apellido = reader.GetString(6);
-                            Login.Posicion = reader.GetString(4);
+                            Login.NivelAcceso = reader.GetString(4);
                             Login.Email = reader.GetString(3);
 
                         }
@@ -73,45 +69,45 @@ namespace EstudioColmenaTrabajoPractico.Controlador
         }
 
 
-            public string RecuperarContraseña(string userRequesting)
+        public string RecuperarContraseña(string userRequesting)
+        {
+            using (var connection = GetConnection())
             {
-                using (var connection = GetConnection())
+                connection.Open();
+                using (var command = new SqlCommand())
                 {
-                    connection.Open();
-                    using (var command = new SqlCommand())
+                    command.Connection = connection;
+                    command.CommandText = "select*from Login where Usuario=@usuario or Email =@email";
+                    command.Parameters.AddWithValue("@usuario", userRequesting);
+                    command.Parameters.AddWithValue("@email", userRequesting);
+                    command.CommandType = CommandType.Text;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.Read() == true)
                     {
-                        command.Connection = connection;
-                        command.CommandText = "select*from Login where Usuario=@usuario or Email =@email";
-                        command.Parameters.AddWithValue("@usuario", userRequesting);
-                        command.Parameters.AddWithValue("@email", userRequesting);
-                        command.CommandType = CommandType.Text;
-                        SqlDataReader reader = command.ExecuteReader();
+                        string Usuario = reader.GetString(5) + ", " + reader.GetString(6);
+                        string Email = reader.GetString(3);
+                        string accountPassword = reader.GetString(2);
 
-                        if (reader.Read() == true)
-                        {
-                            string Usuario = reader.GetString(5) + ", " + reader.GetString(6);
-                            string Email = reader.GetString(3);
-                            string accountPassword = reader.GetString(2);
-
-                            var mailService = new Modelo.SistemSoportEmail();
-                            mailService.sendMail(
-                                subject: "SISTEMA: Solicitud de Recuperación de Contraseña",
-                                body: "Hola, " + Usuario + "\nUsted solicitó recuperar su contraseña.\n" +
-                                "tu contraseña actual es: " + accountPassword,
-                                recipientMail: new List<string> { Email }
-                        );
+                        var mailService = new Modelo.SistemSoportEmail();
+                        mailService.sendMail(
+                            subject: "SISTEMA: Solicitud de Recuperación de Contraseña",
+                            body: "Hola, " + Usuario + "\nUsted solicitó recuperar su contraseña.\n" +
+                            "tu contraseña actual es: " + accountPassword,
+                            recipientMail: new List<string> { Email }
+                    );
 
                         return "Hola, " + Usuario + "\nUsted solicitó recuperar su contraseña.\n" +
-                        "\nPor favor, verifique la contraseña enviada a su correo electrónico: \n" 
-                        + Email + ", e intente ingresar nuevamente" ;
+                        "\nPor favor, verifique la contraseña enviada a su correo electrónico: \n"
+                        + Email + ", e intente ingresar nuevamente";
 
 
                     }
 
-                        else
-                            return "Lo siento, no tienes una cuenta con ese correo o nombre de usuario";
-                    }
+                    else
+                        return "Lo siento, no tienes una cuenta con ese correo o nombre de usuario";
                 }
+            }
 
 
 
@@ -122,11 +118,11 @@ namespace EstudioColmenaTrabajoPractico.Controlador
 
         public void AnyMethod()
         {
-            if (Login.Posicion == Posicion.Administrador)
+            if (Login.NivelAcceso == Posicion.Administrador)
             {
                 //Codes
             }
-            if (Login.Posicion == Posicion.Arquitecto /*|| UserCache.Position == Positions.Compras || UserCache.Position == Positions.Arquitecto*/)
+            if (Login.NivelAcceso == Posicion.Arquitecto /*|| UserCache.Position == Positions.Compras || UserCache.Position == Positions.Arquitecto*/)
             {
                 //Codes
             }

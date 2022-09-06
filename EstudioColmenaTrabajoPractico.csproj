@@ -73,10 +73,10 @@
   <ItemGroup>
     <Compile Include="Controlador\AsesorMetodos.cs" />
     <Compile Include="Controlador\ClienteMetodos.cs" />
-    <Compile Include="Controlador\Departamento.cs" />
-    <Compile Include="Controlador\Localidad.cs" />
+    <Compile Include="Modelo\Auxiliar\DepartamentoAuxiliar.cs" />
+    <Compile Include="Modelo\Auxiliar\LocalidadAuxiliar.cs" />
     <Compile Include="Controlador\PresupuestoMetodos.cs" />
-    <Compile Include="Controlador\Provincia.cs" />
+    <Compile Include="Modelo\Auxiliar\ProvinciaAuxiliar.cs" />
     <Compile Include="Controlador\ProyectoMetodos.cs" />
     <Compile Include="Controlador\ReunionMetodos.cs" />
     <Compile Include="Controlador\TipologiaMetodos.cs" />

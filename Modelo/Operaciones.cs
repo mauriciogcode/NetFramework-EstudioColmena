@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-using EstudioColmenaTrabajoPractico.Controlador;
-using EstudioColmenaTrabajoPractico.Modelo;
 
 namespace EstudioColmenaTrabajoPractico.Modelo
 {
@@ -28,7 +23,7 @@ namespace EstudioColmenaTrabajoPractico.Modelo
                 {
                     oListaProvincia.Add(new Provincia
                     {
-                        CodigoProvincia = Convert.ToInt32(dr["CodigoProvincia"]),
+                        IdProvincia = Convert.ToInt32(dr["CodigoProvincia"]),
                         Nombre = Convert.ToString(dr["Nombre"].ToString())
                     });
 
@@ -59,7 +54,7 @@ namespace EstudioColmenaTrabajoPractico.Modelo
                 {
                     oListaDepartamento.Add(new Departamento
                     {
-                        CodigoDepartamento = Convert.ToInt32(dr["CodigoDepartamento"]),
+                        IdDepartamento = Convert.ToInt32(dr["CodigoDepartamento"]),
                         Nombre = Convert.ToString(dr["Nombre"].ToString())
                     });
 
@@ -90,7 +85,7 @@ namespace EstudioColmenaTrabajoPractico.Modelo
                 {
                     oListaLocalidad.Add(new Localidad
                     {
-                        CodigoLocalidad = Convert.ToInt32(dr["CodigoLocalidad"]),
+                        IdLocalidad = Convert.ToInt32(dr["CodigoLocalidad"]),
                         Nombre = Convert.ToString(dr["Nombre"].ToString())
                     });
 
