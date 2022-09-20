@@ -16,12 +16,12 @@ namespace EstudioColmenaTrabajoPractico
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Vista.frmCliente());
             //Application.Run(new Vista.Formularios_cliente.Agregacliente());
-            Application.Run(new LOGIN());
+            //Application.Run(new LOGIN());
             //Application.Run(new Vista.FormularioReunion.frmreuniones());
             //Application.Run(new Vista.FormularioTipologiasProyecto.frmTipologia());
             //Application.Run(new Vista.FormularioPrecio.frmCambiarHonorarios());
             //Application.Run(new Vista.FormularioPresupuesto.Presupuesto());
-            //Application.Run(new Vista.FormularioProyecto.frmProyecto());
+            Application.Run(new Vista.FormularioProyecto.frmProyecto());
         }
 
     }
