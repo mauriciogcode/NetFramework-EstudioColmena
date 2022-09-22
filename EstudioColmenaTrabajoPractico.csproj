@@ -73,7 +73,6 @@
   <ItemGroup>
     <Compile Include="Controlador\AsesorMetodos.cs" />
     <Compile Include="Controlador\ClienteMetodos.cs" />
-    <Compile Include="Controlador\Localidad.cs" />
     <Compile Include="Controlador\PresupuestoMetodos.cs" />
     <Compile Include="Controlador\ProyectoMetodos.cs" />
     <Compile Include="Controlador\ReunionMetodos.cs" />
