@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EstudioColmenaTrabajoPractico.Modelo
+﻿namespace EstudioColmenaTrabajoPractico.Modelo
 {
     class Cliente
     {
@@ -23,6 +17,10 @@ namespace EstudioColmenaTrabajoPractico.Modelo
         public string Email { get; set; }
 
         public int IdProvincia { get; set; }
+
+        public string Departamento { get; set; }
+        public string Provincia { get; set; }
+        public string Localidad { get; set; }
 
 
         public Cliente()

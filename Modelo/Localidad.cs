@@ -7,5 +7,7 @@
         public int IdDepartamento { get; set; }
         public bool Estado { get; set; }
 
+        public int CodigoLocalidad { get; set; }
+
     }
 }
