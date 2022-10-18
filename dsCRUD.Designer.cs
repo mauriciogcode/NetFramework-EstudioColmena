@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace EstudioColmenaTrabajoPractico {
+namespace Colmena.Entidades {
     
     
     /// <summary>
@@ -5367,7 +5367,7 @@ namespace EstudioColmenaTrabajoPractico {
         }
     }
 }
-namespace EstudioColmenaTrabajoPractico.dsCRUDTableAdapters {
+namespace Colmena.Entidades.dsCRUDTableAdapters {
     
     
     /// <summary>
@@ -5630,7 +5630,7 @@ SELECT IdCliente, Documento, Apellido, Nombre, Provincia, Departamento, Localida
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::EstudioColmenaTrabajoPractico.Properties.Settings.Default.EstudioColmenaConnectionString;
+            this._connection.ConnectionString = global::Colmena.Entidades.Properties.Settings.Default.EstudioColmenaConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6708,7 +6708,7 @@ SELECT IdReunion, FechaReunion, FechaDeCreacion, Hora, Estado, IdAsesor, IdProye
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::EstudioColmenaTrabajoPractico.Properties.Settings.Default.EstudioColmenaConnectionString;
+            this._connection.ConnectionString = global::Colmena.Entidades.Properties.Settings.Default.EstudioColmenaConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7305,7 +7305,7 @@ SELECT IdReunion, FechaReunion, FechaDeCreacion, Hora, Estado, IdAsesor, IdProye
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::EstudioColmenaTrabajoPractico.Properties.Settings.Default.EstudioColmenaConnectionString;
+            this._connection.ConnectionString = global::Colmena.Entidades.Properties.Settings.Default.EstudioColmenaConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7777,7 +7777,7 @@ SELECT IdPrecio, PrecioActual, PrecioAnterior FROM Precio WHERE (IdPrecio = @IdP
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::EstudioColmenaTrabajoPractico.Properties.Settings.Default.EstudioColmenaConnectionString;
+            this._connection.ConnectionString = global::Colmena.Entidades.Properties.Settings.Default.EstudioColmenaConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8053,7 +8053,7 @@ SELECT IdPrecio, PrecioActual, PrecioAnterior FROM Precio WHERE (IdPrecio = @IdP
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::EstudioColmenaTrabajoPractico.Properties.Settings.Default.EstudioColmenaConnectionString;
+            this._connection.ConnectionString = global::Colmena.Entidades.Properties.Settings.Default.EstudioColmenaConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8290,7 +8290,7 @@ SELECT IdPresupuesto, CostoReunion, CostoTotal, CantidadConsultas, IdReunion, Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::EstudioColmenaTrabajoPractico.Properties.Settings.Default.EstudioColmenaConnectionString;
+            this._connection.ConnectionString = global::Colmena.Entidades.Properties.Settings.Default.EstudioColmenaConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8860,7 +8860,7 @@ SELECT IdPresupuesto, CostoReunion, CostoTotal, CantidadConsultas, IdReunion, Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::EstudioColmenaTrabajoPractico.Properties.Settings.Default.EstudioColmenaConnectionString;
+            this._connection.ConnectionString = global::Colmena.Entidades.Properties.Settings.Default.EstudioColmenaConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9264,7 +9264,7 @@ SELECT IdProyecto, Nombre, Descripcion, Cliente, Terreno, Superficie, Niveles, H
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::EstudioColmenaTrabajoPractico.Properties.Settings.Default.EstudioColmenaConnectionString;
+            this._connection.ConnectionString = global::Colmena.Entidades.Properties.Settings.Default.EstudioColmenaConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

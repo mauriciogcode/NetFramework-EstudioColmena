@@ -1,4 +1,4 @@
-﻿namespace EstudioColmenaTrabajoPractico
+﻿namespace Colmena.Entidades
 {
     public partial class dsCRUD
     {
@@ -20,7 +20,7 @@
 }
 
 
-namespace EstudioColmenaTrabajoPractico.dsCRUDTableAdapters
+namespace Colmena.Entidades.dsCRUDTableAdapters
 {
     partial class Presupuesto2TableAdapter
     {

@@ -1,4 +1,4 @@
-﻿namespace EstudioColmenaTrabajoPractico.Modelo
+﻿namespace Colmena.Entidades.Modelo
 {
     public class Configuracion
     {

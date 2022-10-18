@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace EstudioColmenaTrabajoPractico.Modelo
+namespace Colmena.Entidades.Modelo
 {
     public class Operaciones
     {

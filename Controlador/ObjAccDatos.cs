@@ -1,11 +1,11 @@
-﻿using EstudioColmenaTrabajoPractico.Modelo;
+﻿using Colmena.Entidades.Modelo;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace EstudioColmenaTrabajoPractico.Controlador
+namespace Colmena.Entidades.Controlador
 {
-    public class ObjAccDatos : Modelo.Coneccion
+    public class ObjAccDatos : Modelo.ColmenaConeccion
     {
 
         //public void editProfile(int IdUsuario, string Usuario, string Contraseña, string Nombre, string Apellido, string Email)

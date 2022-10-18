@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace EstudioColmenaTrabajoPractico {
+namespace Colmena.Entidades {
     
     
     /// <summary>
@@ -849,7 +849,7 @@ namespace EstudioColmenaTrabajoPractico {
         }
     }
 }
-namespace EstudioColmenaTrabajoPractico.dsCRUDLoginTableAdapters {
+namespace Colmena.Entidades.dsCRUDLoginTableAdapters {
     
     
     /// <summary>
@@ -1031,7 +1031,7 @@ SELECT IdUsuario, Usuario, Contraseña, Email, NivelAcceso FROM Login WHERE (IdU
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::EstudioColmenaTrabajoPractico.Properties.Settings.Default.EstudioColmenaConnectionString;
+            this._connection.ConnectionString = global::Colmena.Entidades.Properties.Settings.Default.EstudioColmenaConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EstudioColmenaTrabajoPractico.Properties {
+namespace Colmena.Entidades.Properties {
     using System;
     
     

@@ -1,4 +1,4 @@
-﻿namespace EstudioColmenaTrabajoPractico
+﻿namespace Colmena.Entidades
 {
 
 
@@ -7,7 +7,7 @@
     }
 }
 
-namespace EstudioColmenaTrabajoPractico.dsCRUDLoginTableAdapters {
+namespace Colmena.Entidades.dsCRUDLoginTableAdapters {
     
     
     public partial class LoginTableAdapter {

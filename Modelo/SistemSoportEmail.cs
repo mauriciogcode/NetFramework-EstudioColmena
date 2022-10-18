@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EstudioColmenaTrabajoPractico.Modelo
+namespace Colmena.Entidades.Modelo
 {
     class SistemSoportEmail : ServidorEmailMaestro
     {

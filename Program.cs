@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace EstudioColmenaTrabajoPractico
+namespace Colmena.Entidades
 {
     internal static class Program
     {

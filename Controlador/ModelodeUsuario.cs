@@ -1,6 +1,6 @@
-﻿using EstudioColmenaTrabajoPractico.Modelo;
+﻿using Colmena.Entidades.Modelo;
 
-namespace EstudioColmenaTrabajoPractico.Controlador
+namespace Colmena.Entidades.Controlador
 {
     public class ModelodeUsuario
     {

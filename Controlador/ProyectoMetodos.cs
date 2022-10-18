@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EstudioColmenaTrabajoPractico.Controlador
+namespace Colmena.Entidades.Controlador
 {
     class ProyectoMetodos
     {

@@ -1,13 +1,13 @@
-﻿using EstudioColmenaTrabajoPractico.Modelo;
+﻿using Colmena.Entidades.Modelo;
 using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
 
-namespace EstudioColmenaTrabajoPractico.Controlador
+namespace Colmena.Entidades.Controlador
 {
-    class ClienteMetodos : Modelo.Coneccion
+    class ClienteMetodos : Modelo.ColmenaConeccion
     {
 
         #region Consultas

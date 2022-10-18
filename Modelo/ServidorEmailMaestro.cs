@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Mail;
 
-namespace EstudioColmenaTrabajoPractico.Modelo
+namespace Colmena.Entidades.Modelo
 {
     public abstract class ServidorEmailMaestro
     {
