@@ -23,7 +23,7 @@ namespace Colmena.Datos
                 SqlCommand sqlComm = new SqlCommand(sqlSentencia, sqlCnn);
                 sqlComm.CommandType = CommandType.StoredProcedure;
 
-                sqlComm.Parameters.Add("@ID", SqlDbType.NVarChar).Value = obj.IdCliente;                
+                sqlComm.Parameters.Add("@ID", SqlDbType.NVarChar).Value = obj.Documento;
 
                 sqlCnn.Open();
 
@@ -64,7 +64,7 @@ namespace Colmena.Datos
         public override void GetById()
         {
             throw new NotImplementedException();
-        }        
+        }
 
         public override void Insert(Cliente obj)
         {

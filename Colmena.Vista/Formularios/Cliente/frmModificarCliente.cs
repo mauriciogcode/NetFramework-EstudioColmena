@@ -8,16 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Colmena.Entidades.Vista.Formularios_cliente
+namespace Colmena.Vista.Formularios.Cliente
 {
-    public partial class frmEliminaCliente : Form
+    public partial class frmModificarCliente : Form
     {
-        public frmEliminaCliente()
+        public frmModificarCliente()
         {
             InitializeComponent();
         }
 
-        private void BtnEliminar_Click(object sender, EventArgs e)
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmModificarCliente_Load(object sender, EventArgs e)
         {
 
         }

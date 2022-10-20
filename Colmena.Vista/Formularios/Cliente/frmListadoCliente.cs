@@ -1,5 +1,6 @@
 ﻿using Colmena.Entidades;
 using Colmena.Negocio.LogicaEntidades;
+using Colmena.Vista.Formularios.Cliente;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,9 +13,9 @@ using System.Windows.Forms;
 
 namespace Colmena.Vista.Vista.FormularioCliente
 {
-    public partial class ListadoClientes : Form
+    public partial class frmListadoClientes : Form
     {
-        public ListadoClientes()
+        public frmListadoClientes()
         {
             InitializeComponent();
         }
@@ -58,7 +59,7 @@ namespace Colmena.Vista.Vista.FormularioCliente
                 cliente.Email = TxtMail.Text;
                 cliente.Ocupacion = TxtOcupacion.Text;
                 cliente.Telefono = TxtTelefono.Text;
-                
+
                 logic.Insert(cliente);
                 Listar();
             }
@@ -66,6 +67,44 @@ namespace Colmena.Vista.Vista.FormularioCliente
             {
                 MessageBox.Show($"Ups! Ha ocurrido un error: {ex.Message}");
             }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int? Id = GetById();
+
+                if (Id != null)
+                {
+                    cliente.Documento = Id.ToString();
+                    logic.Delete(cliente);
+                }
+                Listar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ups! Ha ocurrido un error: {ex.Message}");
+            }
+        }
+
+        private int? GetById()
+        {
+            try
+            {
+                return int.Parse(DgvClientes.Rows[DgvClientes.CurrentRow.Index].Cells[0].Value.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ups! Ha ocurrido un error: {ex.Message}");
+                throw ex;
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            frmModificarCliente frm = new frmModificarCliente();
+            frm.ShowDialog();            
         }
     }
 }
