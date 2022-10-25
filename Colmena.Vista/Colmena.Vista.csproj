@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formularios\Reunion\frmCalendar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Reunion\frmCalendar.Designer.cs">
+      <DependentUpon>frmCalendar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Formularios\Cliente\ListadoClientes.cs">
@@ -54,6 +60,9 @@
     <Compile Include="Formularios\Cliente\ListadoClientes.Designer.cs">
       <DependentUpon>ListadoClientes.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Formularios\Reunion\frmCalendar.resx">
+      <DependentUpon>frmCalendar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -98,7 +107,6 @@
     <Folder Include="Formularios\Presupuesto\" />
     <Folder Include="Formularios\Provincia\" />
     <Folder Include="Formularios\Proyecto\" />
-    <Folder Include="Formularios\Reunion\" />
     <Folder Include="Formularios\Tipologia\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
