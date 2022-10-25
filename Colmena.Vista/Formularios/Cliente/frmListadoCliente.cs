@@ -51,7 +51,7 @@ namespace Colmena.Vista.Vista.FormularioCliente
             try
             {
                 var id = cliente.IdCliente;
-                             
+
                 if (String.IsNullOrEmpty(TxtDocumento.Text) || String.IsNullOrWhiteSpace(TxtDocumento.Text))
                 {
                     MessageBox.Show($"El Campo Documento es obligatorio");
@@ -78,7 +78,6 @@ namespace Colmena.Vista.Vista.FormularioCliente
                     }
                     else
                     {
-                        // int? id = GetById();
                         cliente.IdCliente = id;
                         logic.Update(cliente);
                         lblDocumento.ForeColor = Color.Black;
@@ -160,7 +159,7 @@ namespace Colmena.Vista.Vista.FormularioCliente
             BotonesHabilitados();
             var id = GetById();
             id = null;
-            cliente.IdCliente = id;          
+            cliente.IdCliente = id;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
