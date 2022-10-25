@@ -50,7 +50,7 @@ namespace Colmena.Vista.Vista.FormularioCliente
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label15 = new System.Windows.Forms.Label();
+            this.lblDocumento = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.TxtNombre = new System.Windows.Forms.TextBox();
             this.TxtApellido = new System.Windows.Forms.TextBox();
@@ -58,11 +58,12 @@ namespace Colmena.Vista.Vista.FormularioCliente
             this.TxtDocumento = new System.Windows.Forms.TextBox();
             this.DgvClientes = new System.Windows.Forms.DataGridView();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.txtDepto = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.btnCrear = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvClientes)).BeginInit();
             this.SuspendLayout();
@@ -235,7 +236,7 @@ namespace Colmena.Vista.Vista.FormularioCliente
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label15);
+            this.groupBox1.Controls.Add(this.lblDocumento);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.TxtNombre);
             this.groupBox1.Controls.Add(this.TxtApellido);
@@ -250,14 +251,14 @@ namespace Colmena.Vista.Vista.FormularioCliente
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cliente";
             // 
-            // label15
+            // lblDocumento
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(4, 72);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(62, 13);
-            this.label15.TabIndex = 44;
-            this.label15.Text = "Documento";
+            this.lblDocumento.AutoSize = true;
+            this.lblDocumento.Location = new System.Drawing.Point(4, 72);
+            this.lblDocumento.Name = "lblDocumento";
+            this.lblDocumento.Size = new System.Drawing.Size(62, 13);
+            this.lblDocumento.TabIndex = 44;
+            this.lblDocumento.Text = "Documento";
             // 
             // label12
             // 
@@ -319,6 +320,7 @@ namespace Colmena.Vista.Vista.FormularioCliente
             this.DgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvClientes.Size = new System.Drawing.Size(675, 343);
             this.DgvClientes.TabIndex = 91;
+            this.DgvClientes.SelectionChanged += new System.EventHandler(this.DgvClientes_SelectionChanged);
             // 
             // btnGuardar
             // 
@@ -330,14 +332,15 @@ namespace Colmena.Vista.Vista.FormularioCliente
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // button1
+            // btnCancelar
             // 
-            this.button1.Location = new System.Drawing.Point(917, 387);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 89;
-            this.button1.Text = "Cancelar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCancelar.Location = new System.Drawing.Point(917, 387);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 89;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // txtDepto
             // 
@@ -358,7 +361,7 @@ namespace Colmena.Vista.Vista.FormularioCliente
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(674, 387);
+            this.btnEliminar.Location = new System.Drawing.Point(113, 386);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 115;
@@ -368,7 +371,7 @@ namespace Colmena.Vista.Vista.FormularioCliente
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(755, 387);
+            this.btnModificar.Location = new System.Drawing.Point(194, 386);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 115;
@@ -376,11 +379,22 @@ namespace Colmena.Vista.Vista.FormularioCliente
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
+            // btnCrear
+            // 
+            this.btnCrear.Location = new System.Drawing.Point(26, 386);
+            this.btnCrear.Name = "btnCrear";
+            this.btnCrear.Size = new System.Drawing.Size(75, 23);
+            this.btnCrear.TabIndex = 116;
+            this.btnCrear.Text = "Crear";
+            this.btnCrear.UseVisualStyleBackColor = true;
+            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
+            // 
             // frmListadoClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1012, 422);
+            this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.txtDepto);
@@ -408,7 +422,7 @@ namespace Colmena.Vista.Vista.FormularioCliente
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.DgvClientes);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCancelar);
             this.Name = "frmListadoClientes";
             this.Text = "Clientes";
             this.Load += new System.EventHandler(this.ListadoClientes_Load);
@@ -443,7 +457,7 @@ namespace Colmena.Vista.Vista.FormularioCliente
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblDocumento;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox TxtNombre;
         private System.Windows.Forms.TextBox TxtApellido;
@@ -451,10 +465,11 @@ namespace Colmena.Vista.Vista.FormularioCliente
         private System.Windows.Forms.TextBox TxtDocumento;
         private System.Windows.Forms.DataGridView DgvClientes;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox txtDepto;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnCrear;
     }
 }

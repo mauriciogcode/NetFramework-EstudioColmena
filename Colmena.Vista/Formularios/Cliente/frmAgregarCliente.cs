@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace Colmena.Vista.Formularios.Cliente
 {
-    public partial class frmModificarCliente : Form
+    public partial class frmAgregarCliente : Form
     {
-        public frmModificarCliente()
+        public frmAgregarCliente()
         {
             InitializeComponent();
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmModificarCliente_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

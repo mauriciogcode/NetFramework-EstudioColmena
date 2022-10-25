@@ -41,7 +41,7 @@ namespace Colmena.Datos
         {
             try
             {
-                string sqlSentencia = "select documento as 'D.N.I', Apellido +', '+ Nombre as 'Apellido y Nombre',Barrio,Calle + ' N° ' + Altura as 'Domicilio',Piso + ' - ' + Depto as 'Piso-Departamento',Email as 'Correo Electronico',Ocupacion,Telefono from cliente";
+                string sqlSentencia = $"select IdCliente, documento as 'D.N.I', Apellido +', '+ Nombre as 'Apellido y Nombre',Barrio,Calle + ' N° ' + Altura as 'Domicilio',Piso + ' - ' + Depto as 'Piso-Departamento',Email as 'Correo Electronico',Ocupacion,Telefono from cliente";
                 SqlConnection sqlCnn = new SqlConnection();
                 sqlCnn.ConnectionString = connection.GetConnection();
                 SqlCommand sqlComm = new SqlCommand(sqlSentencia, sqlCnn);
@@ -52,6 +52,7 @@ namespace Colmena.Datos
                 SqlDataAdapter dataAdapter = new SqlDataAdapter();
                 dataAdapter.SelectCommand = sqlComm;
                 dataAdapter.Fill(ds);
+                
 
                 return ds.Tables[0];
             }
@@ -111,9 +112,9 @@ namespace Colmena.Datos
                 sqlComm.CommandType = CommandType.StoredProcedure;
 
                 sqlComm.Parameters.Add("@DOCUMENTO", SqlDbType.NVarChar).Value = obj.Documento;
-                sqlComm.Parameters.Add("@APELLIDO", SqlDbType.Int).Value = obj.Apellido;
+                sqlComm.Parameters.Add("@APELLIDO", SqlDbType.NVarChar).Value = obj.Apellido;
                 sqlComm.Parameters.Add("@NOMBRE", SqlDbType.NVarChar).Value = obj.Nombre;
-                sqlComm.Parameters.Add("@BARRIO", SqlDbType.Decimal).Value = obj.Barrio;
+                sqlComm.Parameters.Add("@BARRIO", SqlDbType.NVarChar).Value = obj.Barrio;
                 sqlComm.Parameters.Add("@CALLE", SqlDbType.NVarChar).Value = obj.Calle;
                 sqlComm.Parameters.Add("@ALTURA", SqlDbType.NVarChar).Value = obj.Altura;
                 sqlComm.Parameters.Add("@PISO", SqlDbType.NVarChar).Value = obj.Piso;

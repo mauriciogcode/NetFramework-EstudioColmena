@@ -12,6 +12,7 @@ namespace Colmena.Datos.ConeccionEntidades
     {
         public override void Delete(Login obj)
         {
+            
             throw new NotImplementedException();
         }
 
