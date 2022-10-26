@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Colmena.Vista
+namespace Colmena.Vista.Formularios.Login
 {
     static class Program
     {
@@ -18,7 +18,7 @@ namespace Colmena.Vista
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ListadoClientes());
+            Application.Run(new Login());
         }
     }
 }

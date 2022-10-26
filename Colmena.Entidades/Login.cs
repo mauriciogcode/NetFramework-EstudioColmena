@@ -3,15 +3,15 @@
     public class Login
     {
 
-        public static int IdUsuario { get; set; }
-        public static string Usuario { get; set; }
-        public static string Contraseña { get; set; }
-        public static string Apellido { get; set; }
-        public static string Nombre { get; set; }
-        public static string NivelAcceso { get; set; }
-        public static string Email { get; set; }
+        public  int IdUsuario { get; set; }
+        public  string Usuario { get; set; }
+        public  string Contraseña { get; set; }
+        public string Apellido { get; set; }
+        public  string Nombre { get; set; }
+        public  string NivelAcceso { get; set; }
+        public  string Email { get; set; }
 
-        public static string Posicion { get; set; }
+        public  string Posicion { get; set; }
 
     }
 }
