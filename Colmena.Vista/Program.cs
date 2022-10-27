@@ -21,7 +21,7 @@ namespace Colmena.Vista
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmProyecto());
+            Application.Run(new frmTipologia());
         }
     }
 }
