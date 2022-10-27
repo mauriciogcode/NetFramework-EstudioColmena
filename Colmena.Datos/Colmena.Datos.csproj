@@ -51,7 +51,7 @@
     <Compile Include="QuerysConectios\PresupuestoConeccion.cs" />
     <Compile Include="QuerysConectios\ProvinciaConeccion.cs" />
     <Compile Include="QuerysConectios\ProyectoConeccion.cs" />
-    <Compile Include="QuerysConectios\ReunionConeccion.cs" />
+    <Compile Include="QuerysConectios\ReunionQuery.cs" />
     <Compile Include="QuerysConectios\TipologiaConeccion.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="Interfaces\IConnection.cs" />
