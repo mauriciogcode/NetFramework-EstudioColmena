@@ -1,4 +1,5 @@
 ﻿using Colmena.Entidades;
+using Colmena.Vista.Formularios.Tipologia;
 using Colmena.Vista.Vista.FormularioCliente;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace Colmena.Vista
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmListadoClientes());
+            Application.Run(new frmTipologia());
         }
     }
 }

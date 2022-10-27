@@ -44,6 +44,7 @@
     <Compile Include="Interfaces\INegocio.cs" />
     <Compile Include="LogicaEntidades\ClienteNegocio.cs" />
     <Compile Include="LogicaEntidades\PresupuestoNegocio.cs" />
+    <Compile Include="LogicaEntidades\TipologiaNegocio.cs" />
     <Compile Include="LogicaNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
