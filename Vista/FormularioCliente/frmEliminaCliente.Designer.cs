@@ -49,29 +49,29 @@ namespace Colmena.Entidades.Vista.Formularios_cliente
             // DgvClientes
             // 
             this.DgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvClientes.Location = new System.Drawing.Point(629, 82);
+            this.DgvClientes.Location = new System.Drawing.Point(314, 43);
+            this.DgvClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DgvClientes.Name = "DgvClientes";
             this.DgvClientes.RowHeadersWidth = 82;
             this.DgvClientes.RowTemplate.Height = 33;
-            this.DgvClientes.Size = new System.Drawing.Size(512, 476);
+            this.DgvClientes.Size = new System.Drawing.Size(256, 248);
             this.DgvClientes.TabIndex = 67;
             // 
             // BtnEliminar
             // 
-            this.BtnEliminar.Location = new System.Drawing.Point(829, 607);
-            this.BtnEliminar.Margin = new System.Windows.Forms.Padding(6);
+            this.BtnEliminar.Location = new System.Drawing.Point(414, 316);
             this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(150, 44);
+            this.BtnEliminar.Size = new System.Drawing.Size(75, 23);
             this.BtnEliminar.TabIndex = 45;
             this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.UseVisualStyleBackColor = true;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // BtnCancelar
             // 
-            this.BtnCancelar.Location = new System.Drawing.Point(991, 607);
-            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(6);
+            this.BtnCancelar.Location = new System.Drawing.Point(496, 316);
             this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(150, 44);
+            this.BtnCancelar.Size = new System.Drawing.Size(75, 23);
             this.BtnCancelar.TabIndex = 44;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.UseVisualStyleBackColor = true;
@@ -86,9 +86,11 @@ namespace Colmena.Entidades.Vista.Formularios_cliente
             this.groupBox1.Controls.Add(this.TxtDocumento);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.Lblid);
-            this.groupBox1.Location = new System.Drawing.Point(22, 28);
+            this.groupBox1.Location = new System.Drawing.Point(11, 15);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(520, 192);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(260, 100);
             this.groupBox1.TabIndex = 87;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cliente";
@@ -96,99 +98,91 @@ namespace Colmena.Entidades.Vista.Formularios_cliente
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(9, 154);
-            this.label15.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label15.Location = new System.Drawing.Point(4, 80);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(121, 25);
+            this.label15.Size = new System.Drawing.Size(62, 13);
             this.label15.TabIndex = 44;
             this.label15.Text = "Documento";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(9, 106);
-            this.label12.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label12.Location = new System.Drawing.Point(4, 55);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(89, 25);
+            this.label12.Size = new System.Drawing.Size(44, 13);
             this.label12.TabIndex = 15;
             this.label12.Text = "Apellido";
             // 
             // TxtNombre
             // 
-            this.TxtNombre.Location = new System.Drawing.Point(168, 63);
-            this.TxtNombre.Margin = new System.Windows.Forms.Padding(6);
+            this.TxtNombre.Location = new System.Drawing.Point(84, 33);
             this.TxtNombre.Name = "TxtNombre";
-            this.TxtNombre.Size = new System.Drawing.Size(309, 31);
+            this.TxtNombre.Size = new System.Drawing.Size(156, 20);
             this.TxtNombre.TabIndex = 4;
             // 
             // TxtApellido
             // 
-            this.TxtApellido.Location = new System.Drawing.Point(168, 106);
-            this.TxtApellido.Margin = new System.Windows.Forms.Padding(6);
+            this.TxtApellido.Location = new System.Drawing.Point(84, 55);
             this.TxtApellido.Name = "TxtApellido";
-            this.TxtApellido.Size = new System.Drawing.Size(309, 31);
+            this.TxtApellido.Size = new System.Drawing.Size(156, 20);
             this.TxtApellido.TabIndex = 29;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 63);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Location = new System.Drawing.Point(4, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 25);
+            this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Nombre";
             // 
             // TxtDocumento
             // 
             this.TxtDocumento.BackColor = System.Drawing.SystemColors.Window;
-            this.TxtDocumento.Location = new System.Drawing.Point(168, 149);
-            this.TxtDocumento.Margin = new System.Windows.Forms.Padding(6);
+            this.TxtDocumento.Location = new System.Drawing.Point(84, 77);
             this.TxtDocumento.Name = "TxtDocumento";
-            this.TxtDocumento.Size = new System.Drawing.Size(309, 31);
+            this.TxtDocumento.Size = new System.Drawing.Size(156, 20);
             this.TxtDocumento.TabIndex = 30;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(9, 27);
-            this.label13.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label13.Location = new System.Drawing.Point(4, 14);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(32, 25);
+            this.label13.Size = new System.Drawing.Size(18, 13);
             this.label13.TabIndex = 27;
             this.label13.Text = "ID";
             // 
             // Lblid
             // 
             this.Lblid.AutoSize = true;
-            this.Lblid.Location = new System.Drawing.Point(64, 27);
-            this.Lblid.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Lblid.Location = new System.Drawing.Point(32, 14);
             this.Lblid.Name = "Lblid";
-            this.Lblid.Size = new System.Drawing.Size(82, 25);
+            this.Lblid.Size = new System.Drawing.Size(41, 13);
             this.Lblid.TabIndex = 28;
             this.Lblid.Text = "label14";
             // 
             // BtnBuscar
             // 
-            this.BtnBuscar.Location = new System.Drawing.Point(667, 607);
-            this.BtnBuscar.Margin = new System.Windows.Forms.Padding(6);
+            this.BtnBuscar.Location = new System.Drawing.Point(334, 316);
             this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Size = new System.Drawing.Size(150, 44);
+            this.BtnBuscar.Size = new System.Drawing.Size(75, 23);
             this.BtnBuscar.TabIndex = 89;
             this.BtnBuscar.Text = "Buscar";
             this.BtnBuscar.UseVisualStyleBackColor = true;
             // 
-            // EliminaCliente
+            // frmEliminaCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1168, 671);
+            this.ClientSize = new System.Drawing.Size(584, 349);
             this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.DgvClientes);
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.BtnCancelar);
-            this.Name = "EliminaCliente";
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "frmEliminaCliente";
             this.Text = "EliminaCliente";
             ((System.ComponentModel.ISupportInitialize)(this.DgvClientes)).EndInit();
             this.groupBox1.ResumeLayout(false);

@@ -9,7 +9,7 @@ namespace Colmena.Entidades
 
     public class Tipologia
     {
-        public int IdTipologia { get; set; }
+        public int? IdTipologia { get; set; }
         public string Tipo { get; set; }
         public string Caracteristicas { get; set; }
 

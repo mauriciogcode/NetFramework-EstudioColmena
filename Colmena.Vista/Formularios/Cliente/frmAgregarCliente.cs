@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Colmena.Entidades.Vista.Formularios_cliente
+namespace Colmena.Vista.Formularios.Cliente
 {
-    public partial class frmEliminaCliente : Form
+    public partial class frmAgregarCliente : Form
     {
-        public frmEliminaCliente()
+        public frmAgregarCliente()
         {
             InitializeComponent();
-        }
-
-        private void BtnEliminar_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

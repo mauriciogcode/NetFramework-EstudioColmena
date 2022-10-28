@@ -1,4 +1,5 @@
-﻿using Colmena.Entidades;
+﻿using Colmena.Datos.ConeccionEntidades;
+using Colmena.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -6,11 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Colmena.Datos.ConeccionEntidades
+namespace Colmena.Negocio.LogicaEntidades
 {
-    public class ReunionConeccion : Connection<Reunion>
+    public class PresupuestoNegocio : LogicaNegocio<Presupuesto>
     {
-        public override void Delete(Reunion obj)
+        PresupuestoConeccion coneccion = new PresupuestoConeccion();
+        public override void Delete(Presupuesto obj)
         {
             throw new NotImplementedException();
         }
@@ -20,17 +22,12 @@ namespace Colmena.Datos.ConeccionEntidades
             throw new NotImplementedException();
         }
 
-        public override void GetById()
+        public override void Insert(Presupuesto obj)
         {
             throw new NotImplementedException();
         }
 
-        public override void Insert(Reunion obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void Update(Reunion obj)
+        public override void Update(Presupuesto obj)
         {
             throw new NotImplementedException();
         }

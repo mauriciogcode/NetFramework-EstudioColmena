@@ -43,9 +43,13 @@
   <ItemGroup>
     <Compile Include="Interfaces\INegocio.cs" />
     <Compile Include="LogicaEntidades\ClienteNegocio.cs" />
+    <Compile Include="LogicaEntidades\PresupuestoNegocio.cs" />
+    <Compile Include="LogicaEntidades\ProyectoNegocio.cs" />
+    <Compile Include="LogicaEntidades\TipologiaNegocio.cs" />
     <Compile Include="LogicaEntidades\LoginNegocio.cs" />
     <Compile Include="LogicaNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReunionNegocio.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

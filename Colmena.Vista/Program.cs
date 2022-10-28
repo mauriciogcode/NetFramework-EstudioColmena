@@ -1,4 +1,7 @@
 ﻿using Colmena.Entidades;
+using Colmena.Vista.Formularios.Proyecto;
+using Colmena.Vista.Formularios.Tipologia;
+using Colmena.Vista.Formularios.Reunion;
 using Colmena.Vista.Vista.FormularioCliente;
 using System;
 using System.Collections.Generic;

@@ -8,7 +8,7 @@ namespace Colmena.Entidades
 {
     public class Proyecto
     {
-        public int IdProyecto { get; set; }
+        public int? IdProyecto { get; set; }
         public string NombreDeProyecto { get; set; }
         public string Descripcion { get; set; }
         public string Cliente { get; set; }
