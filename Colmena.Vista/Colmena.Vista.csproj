@@ -76,6 +76,12 @@
     <Compile Include="Formularios\Login\RegistrodeUsuario.Designer.cs">
       <DependentUpon>RegistrodeUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Presupuesto\frmPresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Presupuesto\frmPresupuesto.Designer.cs">
+      <DependentUpon>frmPresupuesto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Reunion\frmCalendar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,11 +172,7 @@
     <Folder Include="Formularios\Departamento\" />
     <Folder Include="Formularios\IVA\" />
     <Folder Include="Formularios\Localidad\" />
-    <Folder Include="Formularios\Presupuesto\" />
     <Folder Include="Formularios\Provincia\" />
-    <Folder Include="Formularios\Proyecto\" />
-    <Folder Include="Formularios\Tipologia\" />
-    <Folder Include="Formularios\Reunion\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

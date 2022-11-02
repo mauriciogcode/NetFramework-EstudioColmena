@@ -66,6 +66,7 @@ namespace Colmena.Vista.Formularios.Login
             this.btnTipologia.Size = new System.Drawing.Size(136, 87);
             this.btnTipologia.TabIndex = 31;
             this.btnTipologia.UseVisualStyleBackColor = true;
+            this.btnTipologia.Click += new System.EventHandler(this.btnTipologia_Click);
             // 
             // label6
             // 
@@ -147,6 +148,7 @@ namespace Colmena.Vista.Formularios.Login
             this.btnPresupuesto.Size = new System.Drawing.Size(159, 87);
             this.btnPresupuesto.TabIndex = 24;
             this.btnPresupuesto.UseVisualStyleBackColor = true;
+            this.btnPresupuesto.Click += new System.EventHandler(this.btnPresupuesto_Click);
             // 
             // label4
             // 
@@ -168,6 +170,7 @@ namespace Colmena.Vista.Formularios.Login
             this.btnCronograma.Size = new System.Drawing.Size(159, 87);
             this.btnCronograma.TabIndex = 22;
             this.btnCronograma.UseVisualStyleBackColor = true;
+            this.btnCronograma.Click += new System.EventHandler(this.btnCronograma_Click);
             // 
             // btnProyecto
             // 
@@ -179,6 +182,7 @@ namespace Colmena.Vista.Formularios.Login
             this.btnProyecto.Size = new System.Drawing.Size(136, 87);
             this.btnProyecto.TabIndex = 21;
             this.btnProyecto.UseVisualStyleBackColor = true;
+            this.btnProyecto.Click += new System.EventHandler(this.btnProyecto_Click);
             // 
             // label3
             // 
@@ -210,6 +214,7 @@ namespace Colmena.Vista.Formularios.Login
             this.btnClientes.Size = new System.Drawing.Size(159, 87);
             this.btnClientes.TabIndex = 18;
             this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // label1
             // 
