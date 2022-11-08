@@ -94,7 +94,7 @@ namespace Colmena.Vista.Formularios.Presupuesto
 
         private void CrearPresupuesto()
         {
-            string fechaActual = DateTime.Now.ToString("ddMMyy");
+            string fechaActual = DateTime.Now.ToString("dd/MM/yy");
             int total = 0;
             int cantReuniones = int.Parse(txtCantidadReuniones.Text);
             int precioTipologia = int.Parse(txtPrecioTipologia.Text);
@@ -102,18 +102,31 @@ namespace Colmena.Vista.Formularios.Presupuesto
             int precioReunion = int.Parse(txtPrecioReunion.Text);
             int totalReuniones = 0;
             int numLista = 1;
-            int idPresupuesto = presupuesto.IdPresupuesto;
+            
 
             precioReunion = int.Parse(txtPrecioReunion.Text);
 
             totalTipologia = precioTipologia;
             totalReuniones = cantReuniones * precioReunion;
             total = totalReuniones + totalTipologia;
+            try
+            {
+                presupuesto.TotalNeto = total;
+                presupuesto.FechaDeCreacion = DateTime.Now;
+                logic.Insert(presupuesto);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ups! Ha pasado un error {ex}");
+            }
+
+            int idPresupuesto = presupuesto.IdPresupuesto;
+
 
             SaveFileDialog savefile = new SaveFileDialog();
             savefile.FileName = string.Format("{0}{1}.pdf", fechaActual, "PresupuestoColmena");
             string PaginaHTML_Texto = Properties.Resources.presupuestoModificado.ToString();
-            ;
+            
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@FECHA", fechaActual.ToString());
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@CLIENTE", txtCliente.Text.ToString());
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@DOMICILIO", TxtCalle.Text.ToString());
@@ -123,13 +136,13 @@ namespace Colmena.Vista.Formularios.Presupuesto
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@TOTAL", total.ToString());
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@NUMERO_LISTA", numLista.ToString());
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@TIPOLOGIA", txtTipo.Text.ToString());
-            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@PRECIO_TIPOLOGIA", precioTipologia.ToString());
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@PRECIOT", precioTipologia.ToString());
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@TOTAL_TIPOLOGIA", totalTipologia.ToString());
-            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@PRECIO_REUNIONES", precioReunion.ToString());
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@PRECIOR", precioReunion.ToString());
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@TOTAL_REUNIONES", totalReuniones.ToString());
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@CANTIDAD_REUNIONES", cantReuniones.ToString());
 
-            string filas = string.Empty;
+            string filas = string.Empty;           
 
             try
             {
@@ -146,11 +159,11 @@ namespace Colmena.Vista.Formularios.Presupuesto
 
                         //Agregamos la imagen del banner al documento
                         iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Properties.Resources.fondoPresupuesto, System.Drawing.Imaging.ImageFormat.Png);
-                        img.ScaleToFit(560 ,340);
+                        img.ScaleToFit(1500, 1340);
                         img.Alignment = iTextSharp.text.Image.UNDERLYING;
 
-                        //img.SetAbsolutePosition(500, 100);
-                        //img.SetAbsolutePosition(pdfDoc.LeftMargin, pdfDoc.Top - 30);
+                        img.SetAbsolutePosition(500, 100);
+                        img.SetAbsolutePosition(pdfDoc.LeftMargin, pdfDoc.Top);
                         pdfDoc.Add(img);
 
 
@@ -168,61 +181,9 @@ namespace Colmena.Vista.Formularios.Presupuesto
             catch (Exception ex)
             {
                 MessageBox.Show($"Ups! Ha pasado un error {ex}");
-            }
-
-
-            try
-            {
-                presupuesto.TotalNeto = total;
-                presupuesto.FechaDeCreacion = DateTime.Now;
-                logic.Insert(presupuesto);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ups! Ha pasado un error {ex}");
-            }
+            }           
         }
 
     }
 }
-#region LogicaPresupuesto
 
-
-
-
-
-//Modelo.Presupuesto2 p = new Modelo.Presupuesto2();
-//int cantidad = p.Cantidad;
-//int precio = p.Precio;
-
-
-//cantidad = int.Parse(txtCantidadConsulta.Text);
-//precio = int.Parse(txtPrecioConsulta.Text);
-
-//int costoTotal = 0;
-//costoTotal = cantidad* precio;
-
-
-
-
-
-
-//foreach (DataGridViewRow row in dataGridView1.Rows)
-//{
-//    filas += "<tr>";
-//    filas += "<td>" + row.Cells["Cantidad"].Value.ToString() + "</td>";
-//    filas += "<td>" + row.Cells["Tipologia"].Value.ToString() + "</td>";
-//    filas += "<td>" + row.Cells["Precio"].Value.ToString() + "</td>";
-//    filas += "<td>" + row.Cells["Total"].Value.ToString() + "</td>";
-//    filas += "</tr>";
-//    total += decimal.Parse(row.Cells["Total"].Value.ToString());
-//}
-//PaginaHTML_Texto = PaginaHTML_Texto.Replace("@FILAS", filas);
-//PaginaHTML_Texto = PaginaHTML_Texto.Replace("@TOTAL", total.ToString());
-
-
-
-
-
-
-#endregion
