@@ -45,7 +45,6 @@ namespace Colmena.Vista.Formularios.Seguimiento
 
             if (dgv.SelectedRows != null)
             {
-
                 lblTitulo.Text = dgv.CurrentRow.Cells[2].Value.ToString();
                 lblproject.Text = dgv.CurrentRow.Cells[0].Value.ToString();
                 lblid.Text = dgv.CurrentRow.Cells[3].Value.ToString();
@@ -57,9 +56,7 @@ namespace Colmena.Vista.Formularios.Seguimiento
                 cbMunicipal.Checked = dgv.CurrentRow.Cells[11].Value is true ? true : false;
                 cbLegajo.Checked = dgv.CurrentRow.Cells[13].Value is true ? true : false;
                 cbComputo.Checked = dgv.CurrentRow.Cells[15].Value is true ? true : false;
-
             }
-
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -73,7 +70,7 @@ namespace Colmena.Vista.Formularios.Seguimiento
                 {
                     Entidades.Seguimiento obe = new Entidades.Seguimiento();
                     //obe.IdSeguimiento = Convert.ToInt32(lblid.Text);
-                    //obe.IdProyecto = Convert.ToInt32(lblproject.Text);
+                    obe.IdProyecto = Convert.ToInt32(lblproject.Text);
                     obe.Factibilidad = cbFactibilidad.Checked;
                     obe.Implantacion = cbImplantacion.Checked;
                     obe.Vistas = cbVistas.Checked;
@@ -127,7 +124,9 @@ namespace Colmena.Vista.Formularios.Seguimiento
             this.Close();
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }

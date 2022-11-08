@@ -31,7 +31,7 @@ namespace Colmena.Datos.QuerysConectios
                                       ",[DateLegajo] =  GETDATE()" +
                                       $",[Computo] = {obj.Computo} " +
                                       ",[DateComputo] =  GETDATE()" +
-                                      $",[Comentario] = {obj.Comentario} " +
+                                      $",[Comentario] = '{obj.Comentario}' " +
                                       $" WHERE IdSeguimiento = {obj.IdSeguimiento}";
 
                 sqlSentencia = sqlSentencia.Replace("True", "1");
@@ -80,7 +80,7 @@ namespace Colmena.Datos.QuerysConectios
                     $" {obe.Municipal}, GETDATE()," +
                     $" {obe.Legajo}, GETDATE()," +
                     $" {obe.Computo}, GETDATE()," +
-                    $" 'Consultar')";
+                    $" '{obe.Comentario}')";
 
                 sqlSentencia = sqlSentencia.Replace("True", "1");
                 sqlSentencia = sqlSentencia.Replace("False", "0");
