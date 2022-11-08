@@ -63,59 +63,57 @@ namespace Colmena.Vista.Formularios.Seguimiento
         {
             try
             {
-
-
                 SeguimientoNegocio oSeguimientoNegocio = new SeguimientoNegocio();
-                if (String.IsNullOrEmpty(lblid.Text))
+                Entidades.Seguimiento obe = new Entidades.Seguimiento();
+
+                if (String.IsNullOrEmpty(txtComentario.Text) || String.IsNullOrWhiteSpace(txtComentario.Text))
                 {
-                    Entidades.Seguimiento obe = new Entidades.Seguimiento();
-                    //obe.IdSeguimiento = Convert.ToInt32(lblid.Text);
-                    obe.IdProyecto = Convert.ToInt32(lblproject.Text);
-                    obe.Factibilidad = cbFactibilidad.Checked;
-                    obe.Implantacion = cbImplantacion.Checked;
-                    obe.Vistas = cbVistas.Checked;
-                    obe.Municipal = cbMunicipal.Checked;
-                    obe.Legajo = cbLegajo.Checked;
-                    obe.Computo = cbComputo.Checked;
-                    obe.Comentario = txtComentario.Text;
-                    if (obe.Comentario == null)
-                    {
-                        obe.Comentario = "";
-                    }
-
-                    oSeguimientoNegocio.Insert(obe);
-                    MessageBox.Show("Seguimiento realizado exitosamente");
-
+                    MessageBox.Show($"Por favor el comentario es un campo que no debe faltar");
                 }
                 else
                 {
-                    Entidades.Seguimiento obe = new Entidades.Seguimiento();
-                    obe.IdSeguimiento = Convert.ToInt32(lblid.Text);
-                    obe.Factibilidad = cbFactibilidad.Checked;
-                    obe.Implantacion = cbImplantacion.Checked;
-                    obe.Vistas = cbVistas.Checked;
-                    obe.Municipal = cbMunicipal.Checked;
-                    obe.Legajo = cbLegajo.Checked;
-                    obe.Computo = cbComputo.Checked;
-                    obe.Comentario = txtComentario.Text;
-                    if (obe.Comentario == null)
+                    if (String.IsNullOrEmpty(lblid.Text))
                     {
-                        obe.Comentario = "";
+                        //obe.IdSeguimiento = Convert.ToInt32(lblid.Text);
+                        obe.IdProyecto = Convert.ToInt32(lblproject.Text);
+                        obe.Factibilidad = cbFactibilidad.Checked;
+                        obe.Implantacion = cbImplantacion.Checked;
+                        obe.Vistas = cbVistas.Checked;
+                        obe.Municipal = cbMunicipal.Checked;
+                        obe.Legajo = cbLegajo.Checked;
+                        obe.Computo = cbComputo.Checked;
+                        obe.Comentario = txtComentario.Text;
+
+
+                        oSeguimientoNegocio.Insert(obe);
+                        MessageBox.Show("Seguimiento realizado exitosamente");
+
+                    }
+                    else
+                    {
+                        obe.IdSeguimiento = Convert.ToInt32(lblid.Text);
+                        obe.Factibilidad = cbFactibilidad.Checked;
+                        obe.Implantacion = cbImplantacion.Checked;
+                        obe.Vistas = cbVistas.Checked;
+                        obe.Municipal = cbMunicipal.Checked;
+                        obe.Legajo = cbLegajo.Checked;
+                        obe.Computo = cbComputo.Checked;
+                        obe.Comentario = txtComentario.Text;
+
+
+                        oSeguimientoNegocio.Update(obe);
+                        MessageBox.Show("Seguimiento modificado exitosamente");
                     }
 
-                    oSeguimientoNegocio.Update(obe);
-                    MessageBox.Show("Seguimiento modificado exitosamente");
+                    DataTable dt = oSeguimientoNegocio.GetAll();
+
+                    dgv.DataSource = dt;
                 }
 
-                DataTable dt = oSeguimientoNegocio.GetAll();
-
-                dgv.DataSource = dt;
-
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show($"Ups! ha ocurrido un error {ex}");
             }
         }
 
