@@ -9,27 +9,46 @@ using System.Threading.Tasks;
 
 namespace Colmena.Negocio.LogicaEntidades
 {
-    public class PresupuestoNegocio : LogicaNegocio<Presupuesto>
+    public class PresupuestoNegocio 
     {
         PresupuestoConeccion coneccion = new PresupuestoConeccion();
-        public override void Delete(Presupuesto obj)
+        
+        public DataTable GetCliente()
         {
-            throw new NotImplementedException();
+            try
+            {
+                return coneccion.GetClientes();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
-        public override DataTable GetAll()
+        public DataTable GetProyecto()
         {
-            throw new NotImplementedException();
-        }
+            try
+            {
+                return coneccion.GetProyecto();
+            }
+            catch (Exception ex)
+            {
 
-        public override void Insert(Presupuesto obj)
-        {
-            throw new NotImplementedException();
+                throw ex;
+            }
         }
-
-        public override void Update(Presupuesto obj)
+        public void Insert(Presupuesto presupuesto)
         {
-            throw new NotImplementedException();
+            try
+            {
+                coneccion.Insert(presupuesto);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }

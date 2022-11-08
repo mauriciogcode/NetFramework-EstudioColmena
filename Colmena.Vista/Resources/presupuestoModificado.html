@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <title>Document</title>
+</head>
+<body>
+    <div style="position: relative; left: 0; top: 0;">
+        <img src="Imagenes/fondoPresupuesto.jpeg" class="back" />
+
+        <div class="container infront">
+            <div class="cliente">
+                <table>
+                    <tr>
+                        <td>@CLIENTE</td>
+                    </tr>
+                    <tr>
+                        <td>@DOMICILIO</td>
+                    </tr>
+                    <tr>
+                        <td>@TELEFONO</td>
+                    </tr>
+                    <tr>
+                        <td>@MAIL</td>
+                    </tr>
+                    <tr>
+                        <td>Argentina</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="clienteword">
+                <h2>Cliente</h2>
+            </div>
+            <div class="presupuestoinfo">
+                <table>
+                    <tr>
+                        <td>Presupuesto Nro: @ID_PRESUPUESTO</td>
+                    </tr>
+                    <tr>
+                        <td>@FECHA</td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="presupuestotitle">
+                <h1>Presupuesto</h1>
+            </div>
+            <div class="total"><h4 class="rounded">Total: @TOTAL </h4></div>
+            <div class="totalinfo">              
+            </div>
+
+            <!--Tablas -->
+            <div class="tabla">
+                <table class="tablageneral">
+                    <tr class="rounded">
+                        <th style="width: 20%;">
+                            Num.
+                        </th>
+                        <th style="width: 60%;">
+                            Descripcion del item
+                        </th>
+                        <th style="width: 10%;">
+                            Precio
+                        </th>
+                        <th style="width: 30%; text-align: center;">
+                            %
+                        </th>
+                        <th>
+                            TOTAL
+                        </th>
+                    </tr>
+                    <tr>
+                        <td style="width: 20%;">@NUMERO_LISTA</td>
+                        <td style="width: 60%;">@TIPOLOGIA</td>
+                        <td style="width: 10%;">@PRECIO_TIPOLOGIA</td>
+                        <td style="width: 30%; text-align: center;"> ---  </td>
+                        <td style="width: 10%;">@TOTAL_TIPOLOGIA</td>
+                    </tr>                 
+                </table>
+
+                <h4>Costo estimado de presentacion de planos</h4>
+                <table class="tablasecundaria">
+
+                    <tr>
+                        <td style="width: 50%;">Precio Reuniones con el Cliente</td>
+                        <td style="width: 30%;"> @PRECIO_REUNIONES </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 50%;">Cantidad de Reuniones con el Cliente</td>
+                        <td style="width: 30%;"> @CANTIDAD_REUNIONES </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 50%;">Total</td>
+                        <td style="width: 30%;"> @TOTAL_REUNIONES </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,700;1,400&display=swap');
+*{
+ font-family: 'Open Sans', sans-serif;
+}
+
+.back {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+.infront {
+            position: absolute;
+            top: 80px;
+            left: 80px;
+        }
+table th{
+    margin-bottom: 50px;
+}
+
+.tablageneral{
+    margin-bottom: 50px;
+}
+
+
+.tablasecundaria{
+        margin-bottom: 50px;
+
+}
+.rounded{ border-radius: 30px 30px 30px 30px; background-color: #4a8fab; -webkit-border-radius: 30px 30px 30px 30px; -moz-border-radius: 30px 30px 30px 30px; -ms-border-radius: 30px 30px 30px 30px; -o-border-radius: 30px 30px 30px 30px;
+    padding: 10px;
+}
+ 
+.rounded th{
+border-radius: 30px 30px 30px 30px; 
+background-color: #4a8fab;
+    padding: 10px;
+
+}
+
+.container {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.7fr 1fr 1.8fr 0.5fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . presupuestotitle presupuestotitle"
+    "clienteword cliente . presupuestoinfo"
+    "tabla tabla tabla tabla"
+    ". . totalinfo total";
+}
+
+.cliente { grid-area: cliente;  }
+
+.clienteword { grid-area: clienteword; }
+
+.presupuestoinfo { grid-area: presupuestoinfo; }
+
+.presupuestotitle { grid-area: presupuestotitle; }
+
+.total { grid-area: total; }
+
+.totalinfo { grid-area: totalinfo; }
+
+.tabla { grid-area: tabla; }

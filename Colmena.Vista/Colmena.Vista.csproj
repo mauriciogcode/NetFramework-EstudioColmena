@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.xmlworker.5.5.13\lib\itextsharp.xmlworker.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -123,6 +129,9 @@
     <EmbeddedResource Include="Formularios\Login\RegistrodeUsuario.resx">
       <DependentUpon>RegistrodeUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Presupuesto\frmPresupuesto.resx">
+      <DependentUpon>frmPresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Reunion\frmCalendar.resx">
       <DependentUpon>frmCalendar.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,10 +149,12 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Formularios\Cliente\frmListadoCliente.resx">
       <DependentUpon>frmListadoCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -173,6 +184,18 @@
     <Folder Include="Formularios\IVA\" />
     <Folder Include="Formularios\Localidad\" />
     <Folder Include="Formularios\Provincia\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\presupuesto.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\presupuestoModificado.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\style.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondoPresupuesto.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
