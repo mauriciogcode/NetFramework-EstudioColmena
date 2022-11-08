@@ -52,6 +52,7 @@
     <Compile Include="Provincia.cs" />
     <Compile Include="Proyecto.cs" />
     <Compile Include="Reunion.cs" />
+    <Compile Include="Seguimiento.cs" />
     <Compile Include="ServicioEmail\ServidorEmailMaestro.cs" />
     <Compile Include="ServicioEmail\SistemSoportEmail.cs" />
     <Compile Include="Tipologia.cs" />

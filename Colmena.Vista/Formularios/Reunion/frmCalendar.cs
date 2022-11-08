@@ -1,5 +1,6 @@
 ﻿using Colmena.Entidades;
 using Colmena.Negocio;
+using Colmena.Negocio.LogicaEntidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +11,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Colmena.Negocio.LogicaEntidades.Utils;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Colmena.Vista.Formularios.Reunion
 {
@@ -51,8 +54,9 @@ namespace Colmena.Vista.Formularios.Reunion
             ReunionNegocio oReunionNegocio = new ReunionNegocio();
             DataTable dt = oReunionNegocio.GetAll();
 
-           dgv.DataSource = null;
             dgv.DataSource = dt;
+
+            PopulateComboProjets();
         }
 
 
@@ -189,8 +193,8 @@ namespace Colmena.Vista.Formularios.Reunion
                     Colmena.Entidades.Reunion oReunion = new Colmena.Entidades.Reunion();
                     oReunion.FechaReunion = dateSelected;
                     oReunion.Estado = txtEvent.Text;
-                    oReunion.IdAsesor = "1";
-                    oReunion.IdProyecto = "2";
+                    oReunion.IdAsesor = cboUser.SelectedValue.ToString();
+                    oReunion.IdProyecto = cboProject.SelectedValue.ToString();
 
                     //oexampleBE.ExampleType = (int)cboTipo.SelectedValue;
 
@@ -211,8 +215,8 @@ namespace Colmena.Vista.Formularios.Reunion
                     Colmena.Entidades.Reunion oReunion = new Colmena.Entidades.Reunion();
                     oReunion.FechaReunion = dateSelected;
                     oReunion.Estado = txtEvent.Text;
-                    oReunion.IdAsesor = "1";
-                    oReunion.IdProyecto = "2";
+                    oReunion.IdAsesor = cboUser.SelectedValue.ToString();
+                    oReunion.IdProyecto = cboProject.SelectedIndex.ToString();
 
                     //oexampleBE.ExampleType = (int)cboTipo.SelectedValue;
 
@@ -270,22 +274,37 @@ namespace Colmena.Vista.Formularios.Reunion
         }
 
 
-
-
-
         #endregion
 
-        #region Metodos
+        public void PopulateComboProjets()
+        {
+            cboProject.Items.Clear();
+            ComboNegocio oComboNegocio = new ComboNegocio();
+             DataTable projects = oComboNegocio.GetProjects();
+
+            foreach (DataRow project in projects.Rows)
+            {
+
+                string fullprojectnames = $"{project[1].ToString()}, {project[2].ToString()}";
+                cboProject.DisplayMember = "Text";
+                cboProject.ValueMember = "Value";
+                cboProject.Items.Add(new { Text = fullprojectnames, Value = project[0].ToString() });
+
+            }
+
+            cboUser.Items.Clear();
+            DataTable users = oComboNegocio.GetUsers();
+
+            foreach (DataRow user in users.Rows)
+            {
+                string fullnames = $"{user[1].ToString()}, {user[2].ToString()}";
+                cboUser.DisplayMember = "Text";
+                cboUser.ValueMember = "Value";
+                cboUser.Items.Add(new { Text = fullnames, Value = user[0].ToString() });
+            }
+        }
 
 
-
-
-
-
-
-
-
-        #endregion
 
 
     }

@@ -100,6 +100,12 @@
     <Compile Include="Formularios\Proyecto\frmProyecto.Designer.cs">
       <DependentUpon>frmProyecto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Seguimiento\frmSeguimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Seguimiento\frmSeguimiento.Designer.cs">
+      <DependentUpon>frmSeguimiento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Tipologia\frmTipologia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Proyecto\frmProyecto.resx">
       <DependentUpon>frmProyecto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Seguimiento\frmSeguimiento.resx">
+      <DependentUpon>frmSeguimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Tipologia\frmTipologia.resx">
       <DependentUpon>frmTipologia.cs</DependentUpon>
