@@ -1,6 +1,7 @@
 ﻿using Colmena.Vista.Formularios.Presupuesto;
 using Colmena.Vista.Formularios.Proyecto;
 using Colmena.Vista.Formularios.Reunion;
+using Colmena.Vista.Formularios.Seguimiento;
 using Colmena.Vista.Formularios.Tipologia;
 using Colmena.Vista.Vista.FormularioCliente;
 using System;
@@ -59,7 +60,8 @@ namespace Colmena.Vista.Formularios.Login
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            frmSeguimiento frmSeguimiento = new frmSeguimiento();
+            frmSeguimiento.ShowDialog();
         }
     }
 }
