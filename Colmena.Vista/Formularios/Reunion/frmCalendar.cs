@@ -193,8 +193,10 @@ namespace Colmena.Vista.Formularios.Reunion
                     Colmena.Entidades.Reunion oReunion = new Colmena.Entidades.Reunion();
                     oReunion.FechaReunion = dateSelected;
                     oReunion.Estado = txtEvent.Text;
-                    oReunion.IdAsesor = "1";
-                    oReunion.IdProyecto = "1";
+                    int idAsesor = cboUser.SelectedIndex + 1;
+                    oReunion.IdAsesor = idAsesor;
+                    int idProyecto = cboProject.SelectedIndex + 1;
+                    oReunion.IdProyecto = idProyecto;
 
                     //oexampleBE.ExampleType = (int)cboTipo.SelectedValue;
 
@@ -215,8 +217,8 @@ namespace Colmena.Vista.Formularios.Reunion
                     Colmena.Entidades.Reunion oReunion = new Colmena.Entidades.Reunion();
                     oReunion.FechaReunion = dateSelected;
                     oReunion.Estado = txtEvent.Text;
-                    oReunion.IdAsesor = cboUser.SelectedValue.ToString();
-                    oReunion.IdProyecto = cboProject.SelectedIndex.ToString();
+                    oReunion.IdAsesor = cboUser.SelectedIndex +1;
+                    oReunion.IdProyecto = cboProject.SelectedIndex +1;
 
                     //oexampleBE.ExampleType = (int)cboTipo.SelectedValue;
 

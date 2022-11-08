@@ -11,25 +11,7 @@ namespace Colmena.Entidades
         public int Hora { get; set; }
 
         public string Estado { get; set; }
-        public string IdAsesor { get; set; }
-        public string IdProyecto { get; set; }
-
-        public Reunion()
-        {
-
-        }
-
-
-
-        public Reunion(DataRow row)
-        {
-            this.FechaReunion = (DateTime)row["FechaReunion"];
-            this.Hora = (int)row["Hora"];
-
-            this.Estado = row["Estado"].ToString();
-            this.IdAsesor = row["IdAsesor"].ToString();
-            this.IdProyecto = row["IdProyecto"].ToString();
-
-        }
+        public int IdAsesor { get; set; }
+        public int IdProyecto { get; set; }
     }
 }
