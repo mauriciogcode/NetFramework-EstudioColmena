@@ -50,6 +50,8 @@ namespace Colmena.Vista.Formularios.Login
             this.btnminimizar = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblEstudioColmena = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.pnlEstudioColmena.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
@@ -61,7 +63,7 @@ namespace Colmena.Vista.Formularios.Login
             this.btnTipologia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTipologia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnTipologia.Image = ((System.Drawing.Image)(resources.GetObject("btnTipologia.Image")));
-            this.btnTipologia.Location = new System.Drawing.Point(376, 299);
+            this.btnTipologia.Location = new System.Drawing.Point(301, 302);
             this.btnTipologia.Name = "btnTipologia";
             this.btnTipologia.Size = new System.Drawing.Size(136, 87);
             this.btnTipologia.TabIndex = 31;
@@ -72,7 +74,7 @@ namespace Colmena.Vista.Formularios.Login
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(389, 396);
+            this.label6.Location = new System.Drawing.Point(314, 399);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(113, 25);
             this.label6.TabIndex = 30;
@@ -143,7 +145,7 @@ namespace Colmena.Vista.Formularios.Login
             this.btnPresupuesto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPresupuesto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnPresupuesto.Image = ((System.Drawing.Image)(resources.GetObject("btnPresupuesto.Image")));
-            this.btnPresupuesto.Location = new System.Drawing.Point(549, 299);
+            this.btnPresupuesto.Location = new System.Drawing.Point(474, 302);
             this.btnPresupuesto.Name = "btnPresupuesto";
             this.btnPresupuesto.Size = new System.Drawing.Size(159, 87);
             this.btnPresupuesto.TabIndex = 24;
@@ -154,7 +156,7 @@ namespace Colmena.Vista.Formularios.Login
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(564, 406);
+            this.label4.Location = new System.Drawing.Point(489, 409);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(134, 25);
             this.label4.TabIndex = 23;
@@ -287,12 +289,37 @@ namespace Colmena.Vista.Formularios.Login
             this.lblEstudioColmena.TabIndex = 1;
             this.lblEstudioColmena.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button1.Location = new System.Drawing.Point(701, 302);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(87, 87);
+            this.button1.TabIndex = 34;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(646, 409);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(193, 25);
+            this.label5.TabIndex = 33;
+            this.label5.Text = "Seg. de Proyectos";
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(920, 446);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.pnlEstudioColmena);
             this.Controls.Add(this.btnTipologia);
             this.Controls.Add(this.label6);
@@ -344,5 +371,7 @@ namespace Colmena.Vista.Formularios.Login
         private System.Windows.Forms.PictureBox btnminimizar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblEstudioColmena;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label5;
     }
 }

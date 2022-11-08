@@ -56,5 +56,10 @@ namespace Colmena.Vista.Formularios.Login
             frmPresupuesto frm = new frmPresupuesto();
             frm.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
