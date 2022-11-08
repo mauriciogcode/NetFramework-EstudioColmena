@@ -66,14 +66,14 @@ namespace Colmena.Vista.Formularios.Seguimiento
         {
             try
             {
-             
+
 
                 SeguimientoNegocio oSeguimientoNegocio = new SeguimientoNegocio();
-                if (Int32.Parse(lblid.Text) != 0)
+                if (String.IsNullOrEmpty(lblid.Text))
                 {
                     Entidades.Seguimiento obe = new Entidades.Seguimiento();
-                    obe.IdSeguimiento = Convert.ToInt16(lblid.Text);
-                    obe.IdProyecto = Convert.ToInt16(lblproject.Text);
+                    //obe.IdSeguimiento = Convert.ToInt32(lblid.Text);
+                    //obe.IdProyecto = Convert.ToInt32(lblproject.Text);
                     obe.Factibilidad = cbFactibilidad.Checked;
                     obe.Implantacion = cbImplantacion.Checked;
                     obe.Vistas = cbVistas.Checked;
@@ -81,30 +81,39 @@ namespace Colmena.Vista.Formularios.Seguimiento
                     obe.Legajo = cbLegajo.Checked;
                     obe.Computo = cbComputo.Checked;
                     obe.Comentario = txtComentario.Text;
-
-                    oSeguimientoNegocio.Update(obe);
-                    MessageBox.Show("Seguimiento modificado exitosamente");
-
-                }
-                else
-                {
-                    Entidades.Seguimiento obe = new Entidades.Seguimiento();
-                    obe.IdSeguimiento = Convert.ToInt16(lblid.Text);
-                    obe.IdProyecto = Convert.ToInt16(lblproject.Text);
-                    obe.Factibilidad = cbFactibilidad.Checked;
-                    obe.Implantacion = cbImplantacion.Checked;
-                    obe.Vistas = cbVistas.Checked;
-                    obe.Municipal = cbMunicipal.Checked;
-                    obe.Legajo = cbLegajo.Checked;
-                    obe.Computo = cbComputo.Checked;
-                    obe.Comentario = txtComentario.Text;
+                    if (obe.Comentario == null)
+                    {
+                        obe.Comentario = "";
+                    }
 
                     oSeguimientoNegocio.Insert(obe);
                     MessageBox.Show("Seguimiento realizado exitosamente");
 
                 }
+                else
+                {
+                    Entidades.Seguimiento obe = new Entidades.Seguimiento();
+                    obe.IdSeguimiento = Convert.ToInt32(lblid.Text);
+                    obe.Factibilidad = cbFactibilidad.Checked;
+                    obe.Implantacion = cbImplantacion.Checked;
+                    obe.Vistas = cbVistas.Checked;
+                    obe.Municipal = cbMunicipal.Checked;
+                    obe.Legajo = cbLegajo.Checked;
+                    obe.Computo = cbComputo.Checked;
+                    obe.Comentario = txtComentario.Text;
+                    if (obe.Comentario == null)
+                    {
+                        obe.Comentario = "";
+                    }
 
-                
+                    oSeguimientoNegocio.Update(obe);
+                    MessageBox.Show("Seguimiento modificado exitosamente");
+                }
+
+                DataTable dt = oSeguimientoNegocio.GetAll();
+
+                dgv.DataSource = dt;
+
             }
             catch (Exception)
             {

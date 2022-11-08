@@ -19,8 +19,7 @@ namespace Colmena.Datos.QuerysConectios
             {
 
                 string sqlSentencia = $"UPDATE[dbo].[Seguimiento]" +
-                                      $"SET[IdProyecto] = {obj.IdProyecto}  " +
-                                      $",[Factibilidad] = {obj.Factibilidad} " +
+                                      $"SET[Factibilidad] = {obj.Factibilidad} " +
                                       ",[DateFactibilidad] =  GETDATE()" +
                                       $",[Implantacion] = {obj.Implantacion} " +
                                       ",[DateImplantacion] =  GETDATE()" +
@@ -33,7 +32,7 @@ namespace Colmena.Datos.QuerysConectios
                                       $",[Computo] = {obj.Computo} " +
                                       ",[DateComputo] =  GETDATE()" +
                                       $",[Comentario] = {obj.Comentario} " +
-                                      $"WHERE IdSeguimiento = {obj.IdSeguimiento}";
+                                      $" WHERE IdSeguimiento = {obj.IdSeguimiento}";
 
                 sqlSentencia = sqlSentencia.Replace("True", "1");
                 sqlSentencia = sqlSentencia.Replace("False", "0");

@@ -193,8 +193,8 @@ namespace Colmena.Vista.Formularios.Reunion
                     Colmena.Entidades.Reunion oReunion = new Colmena.Entidades.Reunion();
                     oReunion.FechaReunion = dateSelected;
                     oReunion.Estado = txtEvent.Text;
-                    oReunion.IdAsesor = cboUser.SelectedValue.ToString();
-                    oReunion.IdProyecto = cboProject.SelectedValue.ToString();
+                    oReunion.IdAsesor = "1";
+                    oReunion.IdProyecto = "1";
 
                     //oexampleBE.ExampleType = (int)cboTipo.SelectedValue;
 
