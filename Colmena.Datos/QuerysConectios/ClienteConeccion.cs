@@ -52,7 +52,6 @@ namespace Colmena.Datos
                 SqlDataAdapter dataAdapter = new SqlDataAdapter();
                 dataAdapter.SelectCommand = sqlComm;
                 dataAdapter.Fill(ds);
-                
 
                 return ds.Tables[0];
             }

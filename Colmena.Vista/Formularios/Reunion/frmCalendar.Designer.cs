@@ -96,6 +96,7 @@
             // 
             // cboProject
             // 
+            this.cboProject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboProject.FormattingEnabled = true;
             this.cboProject.Location = new System.Drawing.Point(385, 34);
             this.cboProject.Name = "cboProject";
@@ -104,6 +105,7 @@
             // 
             // cboUser
             // 
+            this.cboUser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUser.FormattingEnabled = true;
             this.cboUser.Location = new System.Drawing.Point(166, 34);
             this.cboUser.Name = "cboUser";
@@ -225,6 +227,7 @@
             // dgv
             // 
             this.dgv.AllowUserToAddRows = false;
+            this.dgv.AllowUserToDeleteRows = false;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdReunion,
@@ -300,6 +303,7 @@
             // 
             this.IdReunion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.IdReunion.DataPropertyName = "IdReunion";
+            this.IdReunion.FillWeight = 5F;
             this.IdReunion.HeaderText = "Id";
             this.IdReunion.Name = "IdReunion";
             this.IdReunion.ReadOnly = true;

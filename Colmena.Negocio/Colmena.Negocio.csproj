@@ -47,9 +47,11 @@
     <Compile Include="LogicaEntidades\ProyectoNegocio.cs" />
     <Compile Include="LogicaEntidades\TipologiaNegocio.cs" />
     <Compile Include="LogicaEntidades\LoginNegocio.cs" />
+    <Compile Include="LogicaEntidades\Utils\ComboNegocio.cs" />
     <Compile Include="LogicaNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReunionNegocio.cs" />
+    <Compile Include="SeguimientoNegocio.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
