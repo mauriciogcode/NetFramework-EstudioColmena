@@ -294,14 +294,12 @@ namespace Colmena.Vista.Formularios.Presupuesto
             // 
             // txtPrecioTipologia
             // 
-            this.txtPrecioTipologia.Enabled = false;
             this.txtPrecioTipologia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtPrecioTipologia.Location = new System.Drawing.Point(343, 327);
-            this.txtPrecioTipologia.MaxLength = 5;
+            this.txtPrecioTipologia.MaxLength = 10;
             this.txtPrecioTipologia.Name = "txtPrecioTipologia";
             this.txtPrecioTipologia.Size = new System.Drawing.Size(90, 23);
             this.txtPrecioTipologia.TabIndex = 134;
-            this.txtPrecioTipologia.Text = "450000";
             // 
             // label1
             // 
