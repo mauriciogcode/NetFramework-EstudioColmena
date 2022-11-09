@@ -68,7 +68,7 @@ namespace Colmena.Vista.Formularios.Seguimiento
 
                 if (String.IsNullOrEmpty(txtComentario.Text) || String.IsNullOrWhiteSpace(txtComentario.Text))
                 {
-                    MessageBox.Show($"Por favor el comentario es un campo que no debe faltar");
+                    MessageBox.Show($"El comentario es un campo obligatorio");
                 }
                 else
                 {

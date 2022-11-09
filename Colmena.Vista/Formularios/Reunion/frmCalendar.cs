@@ -77,6 +77,8 @@ namespace Colmena.Vista.Formularios.Reunion
             cboUser.Enabled = false;
             txtEvent.Enabled = false;
             btnSave.Enabled = false;
+            btnCancelar.Enabled = false;
+
 
             //txtNombre.Text = dgv.CurrentRow.Cells[1].Value.ToString();
             //txtDescripcion.Text = dgv.CurrentRow.Cells[2].Value.ToString();
@@ -139,7 +141,7 @@ namespace Colmena.Vista.Formularios.Reunion
                 ReunionNegocio oReunionNegocio = new ReunionNegocio();
                 oReunionNegocio.Delete(oReunion);
 
-                MessageBox.Show("Evento borrado exitosamente");
+                MessageBox.Show("Evento borrado exitosamente", "Evento", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 txtIdReunion.Text = "0";
 
@@ -184,57 +186,75 @@ namespace Colmena.Vista.Formularios.Reunion
         {
             try
             {
-                // insert
-                if (txtIdReunion.Text == "0")
+                if (!String.IsNullOrEmpty(txtEvent.Text) &&
+                    !String.IsNullOrWhiteSpace(txtEvent.Text) &&
+                    !String.IsNullOrEmpty(cboProject.Text) &&
+                    !String.IsNullOrWhiteSpace(cboProject.Text) &&
+                    !String.IsNullOrEmpty(cboUser.Text) &&
+                    !String.IsNullOrWhiteSpace(cboUser.Text))
                 {
+                    // insert
+                    if (txtIdReunion.Text == "0")
+                    {
 
-                    DateTime dateSelected = calendar.SelectionRange.Start.AddHours(dtpHour.Value.Hour).AddMinutes(dtpHour.Value.Minute);
+                        DateTime dateSelected = calendar.SelectionRange.Start.AddHours(dtpHour.Value.Hour)
+                            .AddMinutes(dtpHour.Value.Minute);
 
-                    Colmena.Entidades.Reunion oReunion = new Colmena.Entidades.Reunion();
-                    oReunion.FechaReunion = dateSelected;
-                    oReunion.Estado = txtEvent.Text;
-                    int idAsesor = cboUser.SelectedIndex + 1;
-                    oReunion.IdAsesor = idAsesor;
-                    int idProyecto = cboProject.SelectedIndex + 1;
-                    oReunion.IdProyecto = idProyecto;
+                        Colmena.Entidades.Reunion oReunion = new Colmena.Entidades.Reunion();
+                        oReunion.FechaReunion = dateSelected;
+                        oReunion.Estado = txtEvent.Text;
+                        int idAsesor = cboUser.SelectedIndex + 1;
+                        oReunion.IdAsesor = idAsesor;
+                        int idProyecto = cboProject.SelectedIndex + 1;
+                        oReunion.IdProyecto = idProyecto;
 
-                    //oexampleBE.ExampleType = (int)cboTipo.SelectedValue;
+                        //oexampleBE.ExampleType = (int)cboTipo.SelectedValue;
 
-                    Colmena.Negocio.ReunionNegocio oReunionNegocio = new Colmena.Negocio.ReunionNegocio();
-                    oReunionNegocio.Insert(oReunion);
-
-
-                    MessageBox.Show("Evento creado exitosamente");
-                    loadAll();
+                        Colmena.Negocio.ReunionNegocio oReunionNegocio = new Colmena.Negocio.ReunionNegocio();
+                        oReunionNegocio.Insert(oReunion);
 
 
-                    // (step missed)  Load dgv
+                        MessageBox.Show("Evento creado exitosamente", "Evento", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        loadAll();
+
+
+                        // (step missed)  Load dgv
+                    }
+                    else //update
+                    {
+                        DateTime dateSelected = calendar.SelectionRange.Start.AddHours(dtpHour.Value.Hour)
+                            .AddMinutes(dtpHour.Value.Minute);
+
+                        Colmena.Entidades.Reunion oReunion = new Colmena.Entidades.Reunion();
+                        oReunion.FechaReunion = dateSelected;
+                        oReunion.Estado = txtEvent.Text;
+                        oReunion.IdAsesor = cboUser.SelectedIndex + 1;
+                        oReunion.IdProyecto = cboProject.SelectedIndex + 1;
+
+                        //oexampleBE.ExampleType = (int)cboTipo.SelectedValue;
+
+                        oReunion.IdReunion = Int32.Parse(txtIdReunion.Text);
+
+                        Colmena.Negocio.ReunionNegocio oReunionNegocio = new Colmena.Negocio.ReunionNegocio();
+                        oReunionNegocio.Update(oReunion);
+
+
+                        MessageBox.Show("Evento modificado exitosamente","Evento", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtIdReunion.Text = "0";
+
+                        loadAll();
+                    }
+
                 }
-                else //update
+                else
                 {
-                    DateTime dateSelected = calendar.SelectionRange.Start.AddHours(dtpHour.Value.Hour).AddMinutes(dtpHour.Value.Minute);
-
-                    Colmena.Entidades.Reunion oReunion = new Colmena.Entidades.Reunion();
-                    oReunion.FechaReunion = dateSelected;
-                    oReunion.Estado = txtEvent.Text;
-                    oReunion.IdAsesor = cboUser.SelectedIndex +1;
-                    oReunion.IdProyecto = cboProject.SelectedIndex +1;
-
-                    //oexampleBE.ExampleType = (int)cboTipo.SelectedValue;
-
-                    oReunion.IdReunion = Int32.Parse(txtIdReunion.Text);
-
-                    Colmena.Negocio.ReunionNegocio oReunionNegocio = new Colmena.Negocio.ReunionNegocio();
-                    oReunionNegocio.Update(oReunion);
-
-
-                    MessageBox.Show("Evento modificado exitosamente");
-                    txtIdReunion.Text = "0";
-
-                    loadAll();
+                    if (String.IsNullOrEmpty(txtEvent.Text) || String.IsNullOrWhiteSpace(txtEvent.Text))
+                        MessageBox.Show($"Evento es un campo obligatorio", "Campo Obligatorio",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (String.IsNullOrEmpty(cboProject.Text) || String.IsNullOrWhiteSpace(cboProject.Text))
+                        MessageBox.Show($"Proyecto es un campo obligatorio", "Campo Obligatorio",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (String.IsNullOrEmpty(cboUser.Text) || String.IsNullOrWhiteSpace(cboUser.Text))
+                        MessageBox.Show($"Asesor es un campo obligatorio", "Campo Obligatorio",  MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-
 
             }
             catch (Exception ex)
