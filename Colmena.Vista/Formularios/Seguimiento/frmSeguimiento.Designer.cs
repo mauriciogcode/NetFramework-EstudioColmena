@@ -38,6 +38,15 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.dgv = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.txtDescripcion = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtComentario = new System.Windows.Forms.TextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lblid = new System.Windows.Forms.Label();
+            this.lblproject = new System.Windows.Forms.Label();
             this.IdProyecto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreDeProyecto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,15 +65,6 @@
             this.DateComputo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdProyecto1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Comentario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.lblTitulo = new System.Windows.Forms.Label();
-            this.txtDescripcion = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtComentario = new System.Windows.Forms.TextBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.lblid = new System.Windows.Forms.Label();
-            this.lblproject = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -82,7 +82,7 @@
             this.groupBox1.Controls.Add(this.cbFactibilidad);
             this.groupBox1.Location = new System.Drawing.Point(12, 356);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(665, 71);
+            this.groupBox1.Size = new System.Drawing.Size(770, 71);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Estado de Proyecto";
@@ -200,9 +200,96 @@
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(659, 227);
+            this.dgv.Size = new System.Drawing.Size(767, 227);
             this.dgv.TabIndex = 2;
             this.dgv.SelectionChanged += new System.EventHandler(this.dgv_SelectionChanged);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dgv);
+            this.groupBox2.Location = new System.Drawing.Point(12, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(773, 246);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Seguimiento de Proyecto";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.lblTitulo);
+            this.groupBox3.Controls.Add(this.txtDescripcion);
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Location = new System.Drawing.Point(12, 264);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(770, 86);
+            this.groupBox3.TabIndex = 8;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Selección del Proyecto";
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Location = new System.Drawing.Point(9, 20);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(35, 13);
+            this.lblTitulo.TabIndex = 3;
+            this.lblTitulo.Text = "label2";
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.AutoSize = true;
+            this.txtDescripcion.Location = new System.Drawing.Point(78, 56);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(74, 13);
+            this.txtDescripcion.TabIndex = 2;
+            this.txtDescripcion.Text = "txtDescripcion";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Descripcion:";
+            // 
+            // txtComentario
+            // 
+            this.txtComentario.Location = new System.Drawing.Point(6, 19);
+            this.txtComentario.Multiline = true;
+            this.txtComentario.Name = "txtComentario";
+            this.txtComentario.Size = new System.Drawing.Size(755, 69);
+            this.txtComentario.TabIndex = 3;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.txtComentario);
+            this.groupBox4.Location = new System.Drawing.Point(15, 433);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(767, 100);
+            this.groupBox4.TabIndex = 9;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Comentarios";
+            // 
+            // lblid
+            // 
+            this.lblid.AutoSize = true;
+            this.lblid.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblid.Location = new System.Drawing.Point(1, 563);
+            this.lblid.Name = "lblid";
+            this.lblid.Size = new System.Drawing.Size(6, 2);
+            this.lblid.TabIndex = 3;
+            this.lblid.Text = "label2";
+            // 
+            // lblproject
+            // 
+            this.lblproject.AutoSize = true;
+            this.lblproject.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblproject.Location = new System.Drawing.Point(1, 565);
+            this.lblproject.Name = "lblproject";
+            this.lblproject.Size = new System.Drawing.Size(6, 2);
+            this.lblproject.TabIndex = 10;
+            this.lblproject.Text = "label2";
             // 
             // IdProyecto
             // 
@@ -248,7 +335,7 @@
             // DateFactibilidad
             // 
             this.DateFactibilidad.DataPropertyName = "DateFactibilidad";
-            this.DateFactibilidad.HeaderText = "Fecha Factibilidad";
+            this.DateFactibilidad.HeaderText = "Fecha de Seguimiento";
             this.DateFactibilidad.Name = "DateFactibilidad";
             this.DateFactibilidad.ReadOnly = true;
             this.DateFactibilidad.Visible = false;
@@ -338,10 +425,9 @@
             // DateComputo
             // 
             this.DateComputo.DataPropertyName = "DateComputo";
-            this.DateComputo.HeaderText = "DateComputo";
+            this.DateComputo.HeaderText = "Ultimo Seguimiento Realizado";
             this.DateComputo.Name = "DateComputo";
             this.DateComputo.ReadOnly = true;
-            this.DateComputo.Visible = false;
             // 
             // IdProyecto1
             // 
@@ -359,98 +445,11 @@
             this.Comentario.ReadOnly = true;
             this.Comentario.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.dgv);
-            this.groupBox2.Location = new System.Drawing.Point(12, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(665, 246);
-            this.groupBox2.TabIndex = 6;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Seguimiento de Proyecto";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.lblTitulo);
-            this.groupBox3.Controls.Add(this.txtDescripcion);
-            this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Location = new System.Drawing.Point(12, 264);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(665, 86);
-            this.groupBox3.TabIndex = 8;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Selección del Proyecto";
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Location = new System.Drawing.Point(9, 20);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(35, 13);
-            this.lblTitulo.TabIndex = 3;
-            this.lblTitulo.Text = "label2";
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.AutoSize = true;
-            this.txtDescripcion.Location = new System.Drawing.Point(78, 56);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(74, 13);
-            this.txtDescripcion.TabIndex = 2;
-            this.txtDescripcion.Text = "txtDescripcion";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 56);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Descripcion:";
-            // 
-            // txtComentario
-            // 
-            this.txtComentario.Location = new System.Drawing.Point(6, 19);
-            this.txtComentario.Multiline = true;
-            this.txtComentario.Name = "txtComentario";
-            this.txtComentario.Size = new System.Drawing.Size(641, 69);
-            this.txtComentario.TabIndex = 3;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.txtComentario);
-            this.groupBox4.Location = new System.Drawing.Point(15, 433);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(661, 100);
-            this.groupBox4.TabIndex = 9;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Comentarios";
-            // 
-            // lblid
-            // 
-            this.lblid.AutoSize = true;
-            this.lblid.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblid.Location = new System.Drawing.Point(1, 563);
-            this.lblid.Name = "lblid";
-            this.lblid.Size = new System.Drawing.Size(6, 2);
-            this.lblid.TabIndex = 3;
-            this.lblid.Text = "label2";
-            // 
-            // lblproject
-            // 
-            this.lblproject.AutoSize = true;
-            this.lblproject.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblproject.Location = new System.Drawing.Point(1, 565);
-            this.lblproject.Name = "lblproject";
-            this.lblproject.Size = new System.Drawing.Size(6, 2);
-            this.lblproject.TabIndex = 10;
-            this.lblproject.Text = "label2";
-            // 
             // frmSeguimiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(694, 574);
+            this.ClientSize = new System.Drawing.Size(797, 574);
             this.Controls.Add(this.lblproject);
             this.Controls.Add(this.lblid);
             this.Controls.Add(this.groupBox4);
@@ -492,6 +491,9 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label txtDescripcion;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Label lblid;
+        private System.Windows.Forms.Label lblproject;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdProyecto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreDeProyecto;
@@ -510,8 +512,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DateComputo;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdProyecto1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Comentario;
-        private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Label lblid;
-        private System.Windows.Forms.Label lblproject;
     }
 }
