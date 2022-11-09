@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Colmena.Datos.QuerysConectios.Utils;
 
 namespace Colmena.Negocio.LogicaEntidades
 {
@@ -61,6 +62,18 @@ namespace Colmena.Negocio.LogicaEntidades
             {
                 throw ex;
             }
+        }
+
+        public DataTable GetProvincias()
+        {
+            ProvinciaLocalidadQuery oProvinciaQuery = new ProvinciaLocalidadQuery();
+            return oProvinciaQuery.GetProvincias();
+        }
+
+        public DataTable GetDepartamentos(int id)
+        {
+            ProvinciaLocalidadQuery oLocalidadQuery = new ProvinciaLocalidadQuery();
+            return oLocalidadQuery.GetDepartamentos(id);
         }
     }
 }

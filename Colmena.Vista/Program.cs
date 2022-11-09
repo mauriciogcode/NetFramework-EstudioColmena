@@ -22,7 +22,7 @@ namespace Colmena.Vista.Formularios.Login
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmSeguimiento());
+            Application.Run(new frmListadoClientes());
         }
     }
 }

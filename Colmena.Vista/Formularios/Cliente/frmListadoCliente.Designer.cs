@@ -64,6 +64,8 @@ namespace Colmena.Vista.Vista.FormularioCliente
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnCrear = new System.Windows.Forms.Button();
+            this.cboDepartamento = new System.Windows.Forms.ComboBox();
+            this.cboProvincia = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvClientes)).BeginInit();
             this.SuspendLayout();
@@ -389,11 +391,30 @@ namespace Colmena.Vista.Vista.FormularioCliente
             this.btnCrear.UseVisualStyleBackColor = true;
             this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
+            // cboDepartamento
+            // 
+            this.cboDepartamento.FormattingEnabled = true;
+            this.cboDepartamento.Location = new System.Drawing.Point(538, 359);
+            this.cboDepartamento.Name = "cboDepartamento";
+            this.cboDepartamento.Size = new System.Drawing.Size(121, 21);
+            this.cboDepartamento.TabIndex = 118;
+            // 
+            // cboProvincia
+            // 
+            this.cboProvincia.FormattingEnabled = true;
+            this.cboProvincia.Location = new System.Drawing.Point(385, 360);
+            this.cboProvincia.Name = "cboProvincia";
+            this.cboProvincia.Size = new System.Drawing.Size(121, 21);
+            this.cboProvincia.TabIndex = 117;
+            this.cboProvincia.SelectedIndexChanged += new System.EventHandler(this.cboProvincia_SelectedIndexChanged);
+            // 
             // frmListadoClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1012, 422);
+            this.Controls.Add(this.cboDepartamento);
+            this.Controls.Add(this.cboProvincia);
             this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnEliminar);
@@ -471,5 +492,7 @@ namespace Colmena.Vista.Vista.FormularioCliente
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnCrear;
+        private System.Windows.Forms.ComboBox cboDepartamento;
+        private System.Windows.Forms.ComboBox cboProvincia;
     }
 }

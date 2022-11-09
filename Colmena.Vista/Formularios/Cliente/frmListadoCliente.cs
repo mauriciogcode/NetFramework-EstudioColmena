@@ -28,6 +28,9 @@ namespace Colmena.Vista.Vista.FormularioCliente
             BotonesInhabilitados();
             LimpiarCampos();
             Listar();
+            PopulateComboProjets();
+
+
         }
 
         private void Listar()
@@ -243,5 +246,45 @@ namespace Colmena.Vista.Vista.FormularioCliente
             TxtTelefono.Enabled = true;
         }
         #endregion Metodos
+
+
+        public void PopulateComboProjets()
+        {
+            cboProvincia.Items.Clear();
+            ClienteNegocio oProv = new ClienteNegocio();
+            DataTable provincias = oProv.GetProvincias();
+
+            foreach (DataRow provincia in provincias.Rows)
+            {
+
+                cboProvincia.DisplayMember = provincia.ItemArray[1].ToString();
+                cboProvincia.ValueMember = provincia.ItemArray[0].ToString();
+                cboProvincia.Items.Add(provincia.ItemArray[1].ToString());
+
+            }
+        }
+
+        private void cboProvincia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+
+            int id = cboProvincia.SelectedIndex + 1;
+            cboDepartamento.Items.Clear();
+            ClienteNegocio oDep = new ClienteNegocio();
+            DataTable departamentos = oDep.GetDepartamentos(id);
+
+            DataRow dtr = departamentos.NewRow(); // Todo esto es para que aparezca un campo vacio por defecto en el combo box
+            departamentos.Rows.InsertAt(dtr, 0);
+            cboDepartamento.ResetText();
+
+            foreach (DataRow departamento in departamentos.Rows)
+            {
+                cboDepartamento.DisplayMember = departamento.ItemArray[1].ToString();
+                cboDepartamento.ValueMember = departamento.ItemArray[0].ToString();
+                cboDepartamento.Items.Add(departamento.ItemArray[1].ToString());
+            }
+        }
     }
+
 }

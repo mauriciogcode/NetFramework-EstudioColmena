@@ -58,6 +58,7 @@
     <Compile Include="Interfaces\IConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuerysConectios\Utils\ComboQuery.cs" />
+    <Compile Include="QuerysConectios\Utils\ProvinciaLocalidadQuery.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Colmena.Entidades\Colmena.Entidades.csproj">
