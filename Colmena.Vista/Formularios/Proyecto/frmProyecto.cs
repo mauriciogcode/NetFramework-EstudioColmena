@@ -101,13 +101,18 @@ namespace Colmena.Vista.Formularios.Proyecto
 
                 if (String.IsNullOrEmpty(txtCliente.Text) || String.IsNullOrWhiteSpace(txtCliente.Text))
                 {
-                    MessageBox.Show($"El Campo Tipo es obligatorio");
+                    MessageBox.Show($"El Campo Cliente es obligatorio");
                     lblCliente.ForeColor = Color.Red;
                 }
                 if (String.IsNullOrEmpty(txtDescripcion.Text) || String.IsNullOrWhiteSpace(txtDescripcion.Text))
                 {
                     MessageBox.Show($"El Campo Descripcion es obligatorio");
                     lblDescripcion.ForeColor = Color.Red;
+                }
+                if (String.IsNullOrEmpty(txtNombre.Text) || String.IsNullOrWhiteSpace(txtNombre.Text))
+                {
+                    MessageBox.Show($"El Campo Proyecto es obligatorio");
+                    lblNombre.ForeColor = Color.Red;
                 }
                 else
                 {
@@ -127,6 +132,7 @@ namespace Colmena.Vista.Formularios.Proyecto
                         logic.Insert(proyecto);
                         lblCliente.ForeColor = Color.Black;
                         lblDescripcion.ForeColor = Color.Black;
+                        lblNombre.ForeColor = Color.Black;
                     }
                     else
                     {
@@ -134,6 +140,7 @@ namespace Colmena.Vista.Formularios.Proyecto
                         logic.Update(proyecto);
                         lblCliente.ForeColor = Color.Black;
                         lblDescripcion.ForeColor = Color.Black;
+                        lblNombre.ForeColor = Color.Black;
                     }
 
                     LimpiarCampos();
@@ -166,6 +173,14 @@ namespace Colmena.Vista.Formularios.Proyecto
         {
             txtNombre.Clear();
             txtDescripcion.Clear();
+            txtCliente.Clear();
+            txtBaño.Clear();
+            txtEstilo.Clear();
+            txtHabitaciones.Clear();
+            txtNiveles.Clear();
+            txtRecursos.Clear();
+            txtTerreno.Clear();
+            txtSuperficie.Clear();
         }
         private void GetProyecto()
         {

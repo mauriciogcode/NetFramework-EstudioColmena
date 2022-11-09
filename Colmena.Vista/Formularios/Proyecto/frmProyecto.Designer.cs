@@ -135,9 +135,9 @@ namespace Colmena.Vista.Formularios.Proyecto
             this.lblDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblDescripcion.Location = new System.Drawing.Point(9, 73);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(86, 17);
+            this.lblDescripcion.Size = new System.Drawing.Size(91, 17);
             this.lblDescripcion.TabIndex = 12;
-            this.lblDescripcion.Text = "Descripcion:";
+            this.lblDescripcion.Text = "Descripcion:*";
             // 
             // txtNombre
             // 
@@ -153,9 +153,9 @@ namespace Colmena.Vista.Formularios.Proyecto
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblNombre.Location = new System.Drawing.Point(9, 16);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(145, 17);
+            this.lblNombre.Size = new System.Drawing.Size(150, 17);
             this.lblNombre.TabIndex = 10;
-            this.lblNombre.Text = "Nombre del Proyecto:";
+            this.lblNombre.Text = "Nombre del Proyecto:*";
             // 
             // txtTerreno
             // 
@@ -189,9 +189,9 @@ namespace Colmena.Vista.Formularios.Proyecto
             this.lblCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblCliente.Location = new System.Drawing.Point(9, 224);
             this.lblCliente.Name = "lblCliente";
-            this.lblCliente.Size = new System.Drawing.Size(51, 17);
+            this.lblCliente.Size = new System.Drawing.Size(56, 17);
             this.lblCliente.TabIndex = 14;
-            this.lblCliente.Text = "Cliente";
+            this.lblCliente.Text = "Cliente*";
             // 
             // txtSuperficie
             // 
