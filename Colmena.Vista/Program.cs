@@ -9,6 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Colmena.Vista.Formularios.Seguimiento;
+using Colmena.Vista.Formularios.Presupuesto;
 
 namespace Colmena.Vista.Formularios.Login
 {
@@ -22,7 +23,7 @@ namespace Colmena.Vista.Formularios.Login
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmCalendar());
+            Application.Run(new frmPresupuesto());
         }
     }
 }

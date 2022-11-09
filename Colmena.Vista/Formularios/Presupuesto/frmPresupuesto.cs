@@ -25,8 +25,19 @@ namespace Colmena.Vista.Formularios.Presupuesto
         PresupuestoNegocio logic = new PresupuestoNegocio();
         private void btnCrearPresupuesto_Click(object sender, EventArgs e)
         {
-            CrearPresupuesto();
+            if (String.IsNullOrWhiteSpace(txtPrecioTipologia.Text) || String.IsNullOrEmpty(txtPrecioTipologia.Text))
+            {
+                MessageBox.Show($"El precio del Tipo de proyecto es obligatorio. Por favor completar.");
 
+            }
+            if (String.IsNullOrWhiteSpace(txtCantidadReuniones.Text) || String.IsNullOrEmpty(txtCantidadReuniones.Text))
+            {
+                MessageBox.Show($"La cantidad de reuniones es obligatorio. Por favor completar.");
+            }
+            else
+            {
+                CrearPresupuesto();
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -102,7 +113,7 @@ namespace Colmena.Vista.Formularios.Presupuesto
             int precioReunion = int.Parse(txtPrecioReunion.Text);
             int totalReuniones = 0;
             int numLista = 1;
-            
+
 
             precioReunion = int.Parse(txtPrecioReunion.Text);
 
@@ -126,7 +137,7 @@ namespace Colmena.Vista.Formularios.Presupuesto
             SaveFileDialog savefile = new SaveFileDialog();
             savefile.FileName = string.Format("{0}{1}.pdf", fechaActual, "PresupuestoColmena");
             string PaginaHTML_Texto = Properties.Resources.presupuestoModificado.ToString();
-            
+
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@FECHA", fechaActual.ToString());
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@CLIENTE", txtCliente.Text.ToString());
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@DOMICILIO", TxtCalle.Text.ToString());
@@ -142,7 +153,7 @@ namespace Colmena.Vista.Formularios.Presupuesto
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@TOTAL_REUNIONES", totalReuniones.ToString());
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@CANTIDAD_REUNIONES", cantReuniones.ToString());
 
-            string filas = string.Empty;           
+            string filas = string.Empty;
 
             try
             {
@@ -181,7 +192,7 @@ namespace Colmena.Vista.Formularios.Presupuesto
             catch (Exception ex)
             {
                 MessageBox.Show($"Ups! Ha pasado un error {ex}");
-            }           
+            }
         }
 
     }

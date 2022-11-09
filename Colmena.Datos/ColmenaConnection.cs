@@ -17,8 +17,8 @@ namespace Colmena.Datos
             // connectionString = "Server = DANIELA\\SQLEXPRESS;DataBase=EstudioColmena; integrated security =true";
             //connectionString = "Server = TECWARE\\SQLEXPRESS;DataBase=EstudioColmena; integrated security =true";
 
-            //connectionString = "Server = DESKTOP-R6ML4P4\\SQLEXPRESS;DataBase=EstudioColmena; integrated security =true";
-            connectionString = "Server = DESKTOP-CBVPLVN\\SQLEXPRESS;DataBase=EstudioColmena; integrated security =true";
+            connectionString = "Server = DESKTOP-R6ML4P4\\SQLEXPRESS;DataBase=EstudioColmena; integrated security =true";
+            //connectionString = "Server = DESKTOP-CBVPLVN\\SQLEXPRESS;DataBase=EstudioColmena; integrated security =true";
         }
         public string GetConnection()
         {

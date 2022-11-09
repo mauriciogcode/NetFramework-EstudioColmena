@@ -55,10 +55,24 @@ namespace Colmena.Vista.Vista.FormularioCliente
             {
                 var id = cliente.IdCliente;
 
-                if (String.IsNullOrEmpty(TxtDocumento.Text) || String.IsNullOrWhiteSpace(TxtDocumento.Text))
+                if (String.IsNullOrEmpty(TxtDocumento.Text) &&
+                    String.IsNullOrWhiteSpace(TxtDocumento.Text) &&
+                    String.IsNullOrWhiteSpace(TxtApellido.Text) &&
+                    String.IsNullOrEmpty(TxtApellido.Text) &&
+                    String.IsNullOrEmpty(TxtNombre.Text) &&
+                    String.IsNullOrWhiteSpace(TxtNombre.Text) &&
+                    String.IsNullOrWhiteSpace(TxtTelefono.Text) &&
+                    String.IsNullOrEmpty(TxtTelefono.Text) &&
+                    String.IsNullOrEmpty(TxtMail.Text) &&
+                    String.IsNullOrWhiteSpace(TxtMail.Text) &&
+                    String.IsNullOrWhiteSpace(TxtCalle.Text) &&
+                    String.IsNullOrEmpty(TxtCalle.Text) &&
+                    String.IsNullOrEmpty(TxtAltura.Text) &&
+                    String.IsNullOrWhiteSpace(TxtAltura.Text) &&
+                    String.IsNullOrWhiteSpace(TxtOcupacion.Text) &&
+                    String.IsNullOrEmpty(TxtOcupacion.Text))
                 {
-                    MessageBox.Show($"El Campo Documento es obligatorio");
-                    lblDocumento.ForeColor = Color.Red;
+                    MessageBox.Show($"Falta completar campos obligatorios");                   
                 }
                 else
                 {
@@ -77,13 +91,13 @@ namespace Colmena.Vista.Vista.FormularioCliente
                     if (id == null)
                     {
                         logic.Insert(cliente);
-                        lblDocumento.ForeColor = Color.Black;
+                       
                     }
                     else
                     {
                         cliente.IdCliente = id;
                         logic.Update(cliente);
-                        lblDocumento.ForeColor = Color.Black;
+                       
                     }
 
                     LimpiarCampos();
@@ -173,6 +187,44 @@ namespace Colmena.Vista.Vista.FormularioCliente
             Listar();
         }
 
+        public void PopulateComboProjets()
+        {
+            cboProvincia.Items.Clear();
+            ClienteNegocio oProv = new ClienteNegocio();
+            DataTable provincias = oProv.GetProvincias();
+
+            foreach (DataRow provincia in provincias.Rows)
+            {
+
+                cboProvincia.DisplayMember = provincia.ItemArray[1].ToString();
+                cboProvincia.ValueMember = provincia.ItemArray[0].ToString();
+                cboProvincia.Items.Add(provincia.ItemArray[1].ToString());
+
+            }
+        }
+
+        private void cboProvincia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+
+            int id = cboProvincia.SelectedIndex + 1;
+            cboDepartamento.Items.Clear();
+            ClienteNegocio oDep = new ClienteNegocio();
+            DataTable departamentos = oDep.GetDepartamentos(id);
+
+            DataRow dtr = departamentos.NewRow(); // Todo esto es para que aparezca un campo vacio por defecto en el combo box
+            departamentos.Rows.InsertAt(dtr, 0);
+            cboDepartamento.ResetText();
+
+            foreach (DataRow departamento in departamentos.Rows)
+            {
+                cboDepartamento.DisplayMember = departamento.ItemArray[1].ToString();
+                cboDepartamento.ValueMember = departamento.ItemArray[0].ToString();
+                cboDepartamento.Items.Add(departamento.ItemArray[1].ToString());
+            }
+        }
+
         #region Metodos
         private void LimpiarCampos()
         {
@@ -212,6 +264,9 @@ namespace Colmena.Vista.Vista.FormularioCliente
             TxtMail.Enabled = false;
             TxtOcupacion.Enabled = false;
             TxtTelefono.Enabled = false;
+            TxtLocalidad.Enabled = false;
+            cboDepartamento.Enabled = false;
+            cboProvincia.Enabled = false;
         }
         private void BotonesInhabilitados()
         {
@@ -230,6 +285,7 @@ namespace Colmena.Vista.Vista.FormularioCliente
             btnCrear.Enabled = false;
             btnModificar.Enabled = false;
             btnEliminar.Enabled = false;
+           
         }
         private void ClienteHabilitado()
         {
@@ -244,47 +300,10 @@ namespace Colmena.Vista.Vista.FormularioCliente
             TxtMail.Enabled = true;
             TxtOcupacion.Enabled = true;
             TxtTelefono.Enabled = true;
+            TxtLocalidad.Enabled = true;
+            cboDepartamento.Enabled = true;
+            cboProvincia.Enabled = true;
         }
         #endregion Metodos
-
-
-        public void PopulateComboProjets()
-        {
-            cboProvincia.Items.Clear();
-            ClienteNegocio oProv = new ClienteNegocio();
-            DataTable provincias = oProv.GetProvincias();
-
-            foreach (DataRow provincia in provincias.Rows)
-            {
-
-                cboProvincia.DisplayMember = provincia.ItemArray[1].ToString();
-                cboProvincia.ValueMember = provincia.ItemArray[0].ToString();
-                cboProvincia.Items.Add(provincia.ItemArray[1].ToString());
-
-            }
-        }
-
-        private void cboProvincia_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-
-
-            int id = cboProvincia.SelectedIndex + 1;
-            cboDepartamento.Items.Clear();
-            ClienteNegocio oDep = new ClienteNegocio();
-            DataTable departamentos = oDep.GetDepartamentos(id);
-
-            DataRow dtr = departamentos.NewRow(); // Todo esto es para que aparezca un campo vacio por defecto en el combo box
-            departamentos.Rows.InsertAt(dtr, 0);
-            cboDepartamento.ResetText();
-
-            foreach (DataRow departamento in departamentos.Rows)
-            {
-                cboDepartamento.DisplayMember = departamento.ItemArray[1].ToString();
-                cboDepartamento.ValueMember = departamento.ItemArray[0].ToString();
-                cboDepartamento.Items.Add(departamento.ItemArray[1].ToString());
-            }
-        }
     }
-
 }

@@ -31,9 +31,7 @@ namespace Colmena.Vista.Vista.FormularioCliente
         {
             this.TxtMail = new System.Windows.Forms.TextBox();
             this.TxtTelefono = new System.Windows.Forms.TextBox();
-            this.TxtProvincia = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.TxtLocalidad = new System.Windows.Forms.TextBox();
             this.TxtPiso = new System.Windows.Forms.TextBox();
             this.TxtBarrio = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,9 +39,7 @@ namespace Colmena.Vista.Vista.FormularioCliente
             this.label6 = new System.Windows.Forms.Label();
             this.TxtOcupacion = new System.Windows.Forms.TextBox();
             this.TxtCalle = new System.Windows.Forms.TextBox();
-            this.TxtDepartamento = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -51,10 +47,10 @@ namespace Colmena.Vista.Vista.FormularioCliente
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblDocumento = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lblApellido = new System.Windows.Forms.Label();
             this.TxtNombre = new System.Windows.Forms.TextBox();
             this.TxtApellido = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.TxtDocumento = new System.Windows.Forms.TextBox();
             this.DgvClientes = new System.Windows.Forms.DataGridView();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -66,47 +62,35 @@ namespace Colmena.Vista.Vista.FormularioCliente
             this.btnCrear = new System.Windows.Forms.Button();
             this.cboDepartamento = new System.Windows.Forms.ComboBox();
             this.cboProvincia = new System.Windows.Forms.ComboBox();
+            this.TxtLocalidad = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // TxtMail
             // 
-            this.TxtMail.Location = new System.Drawing.Point(103, 289);
+            this.TxtMail.Location = new System.Drawing.Point(103, 299);
             this.TxtMail.Name = "TxtMail";
             this.TxtMail.Size = new System.Drawing.Size(156, 20);
             this.TxtMail.TabIndex = 110;
             // 
             // TxtTelefono
             // 
-            this.TxtTelefono.Location = new System.Drawing.Point(103, 334);
+            this.TxtTelefono.Location = new System.Drawing.Point(103, 344);
             this.TxtTelefono.MaxLength = 13;
             this.TxtTelefono.Name = "TxtTelefono";
             this.TxtTelefono.Size = new System.Drawing.Size(156, 20);
             this.TxtTelefono.TabIndex = 112;
             // 
-            // TxtProvincia
-            // 
-            this.TxtProvincia.Location = new System.Drawing.Point(103, 222);
-            this.TxtProvincia.Name = "TxtProvincia";
-            this.TxtProvincia.Size = new System.Drawing.Size(156, 20);
-            this.TxtProvincia.TabIndex = 109;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 334);
+            this.label2.Location = new System.Drawing.Point(24, 344);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 92;
-            this.label2.Text = "Telefono";
-            // 
-            // TxtLocalidad
-            // 
-            this.TxtLocalidad.Location = new System.Drawing.Point(103, 244);
-            this.TxtLocalidad.Name = "TxtLocalidad";
-            this.TxtLocalidad.Size = new System.Drawing.Size(156, 20);
-            this.TxtLocalidad.TabIndex = 108;
+            this.label2.Text = "Telefono*";
             // 
             // TxtPiso
             // 
@@ -129,9 +113,9 @@ namespace Colmena.Vista.Vista.FormularioCliente
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(24, 123);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(30, 13);
+            this.label4.Size = new System.Drawing.Size(34, 13);
             this.label4.TabIndex = 93;
-            this.label4.Text = "Calle";
+            this.label4.Text = "Calle*";
             // 
             // TxtAltura
             // 
@@ -144,7 +128,7 @@ namespace Colmena.Vista.Vista.FormularioCliente
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(24, 266);
+            this.label6.Location = new System.Drawing.Point(25, 245);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(74, 13);
             this.label6.TabIndex = 95;
@@ -152,7 +136,7 @@ namespace Colmena.Vista.Vista.FormularioCliente
             // 
             // TxtOcupacion
             // 
-            this.TxtOcupacion.Location = new System.Drawing.Point(103, 311);
+            this.TxtOcupacion.Location = new System.Drawing.Point(103, 321);
             this.TxtOcupacion.MaxLength = 50;
             this.TxtOcupacion.Name = "TxtOcupacion";
             this.TxtOcupacion.Size = new System.Drawing.Size(156, 20);
@@ -166,57 +150,41 @@ namespace Colmena.Vista.Vista.FormularioCliente
             this.TxtCalle.Size = new System.Drawing.Size(156, 20);
             this.TxtCalle.TabIndex = 103;
             // 
-            // TxtDepartamento
-            // 
-            this.TxtDepartamento.Location = new System.Drawing.Point(103, 266);
-            this.TxtDepartamento.Name = "TxtDepartamento";
-            this.TxtDepartamento.Size = new System.Drawing.Size(156, 20);
-            this.TxtDepartamento.TabIndex = 102;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(24, 289);
+            this.label7.Location = new System.Drawing.Point(24, 299);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(26, 13);
+            this.label7.Size = new System.Drawing.Size(30, 13);
             this.label7.TabIndex = 101;
-            this.label7.Text = "Mail";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(24, 244);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 13);
-            this.label8.TabIndex = 100;
-            this.label8.Text = "Localidad";
+            this.label7.Text = "Mail*";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(24, 199);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(34, 13);
+            this.label9.Size = new System.Drawing.Size(38, 13);
             this.label9.TabIndex = 99;
-            this.label9.Text = "Barrio";
+            this.label9.Text = "Barrio*";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(24, 142);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(34, 13);
+            this.label10.Size = new System.Drawing.Size(38, 13);
             this.label10.TabIndex = 98;
-            this.label10.Text = "Altura";
+            this.label10.Text = "Altura*";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(24, 311);
+            this.label11.Location = new System.Drawing.Point(24, 321);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(59, 13);
+            this.label11.Size = new System.Drawing.Size(63, 13);
             this.label11.TabIndex = 97;
-            this.label11.Text = "Ocupacion";
+            this.label11.Text = "Ocupacion*";
             // 
             // label5
             // 
@@ -239,10 +207,10 @@ namespace Colmena.Vista.Vista.FormularioCliente
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lblDocumento);
-            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.lblApellido);
             this.groupBox1.Controls.Add(this.TxtNombre);
             this.groupBox1.Controls.Add(this.TxtApellido);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.lblNombre);
             this.groupBox1.Controls.Add(this.TxtDocumento);
             this.groupBox1.Location = new System.Drawing.Point(19, 15);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
@@ -258,18 +226,18 @@ namespace Colmena.Vista.Vista.FormularioCliente
             this.lblDocumento.AutoSize = true;
             this.lblDocumento.Location = new System.Drawing.Point(4, 72);
             this.lblDocumento.Name = "lblDocumento";
-            this.lblDocumento.Size = new System.Drawing.Size(62, 13);
+            this.lblDocumento.Size = new System.Drawing.Size(66, 13);
             this.lblDocumento.TabIndex = 44;
-            this.lblDocumento.Text = "Documento";
+            this.lblDocumento.Text = "Documento*";
             // 
-            // label12
+            // lblApellido
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(4, 47);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(44, 13);
-            this.label12.TabIndex = 15;
-            this.label12.Text = "Apellido";
+            this.lblApellido.AutoSize = true;
+            this.lblApellido.Location = new System.Drawing.Point(4, 47);
+            this.lblApellido.Name = "lblApellido";
+            this.lblApellido.Size = new System.Drawing.Size(48, 13);
+            this.lblApellido.TabIndex = 15;
+            this.lblApellido.Text = "Apellido*";
             // 
             // TxtNombre
             // 
@@ -287,14 +255,14 @@ namespace Colmena.Vista.Vista.FormularioCliente
             this.TxtApellido.Size = new System.Drawing.Size(156, 20);
             this.TxtApellido.TabIndex = 29;
             // 
-            // label1
+            // lblNombre
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Nombre";
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(4, 25);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(48, 13);
+            this.lblNombre.TabIndex = 3;
+            this.lblNombre.Text = "Nombre*";
             // 
             // TxtDocumento
             // 
@@ -394,25 +362,43 @@ namespace Colmena.Vista.Vista.FormularioCliente
             // cboDepartamento
             // 
             this.cboDepartamento.FormattingEnabled = true;
-            this.cboDepartamento.Location = new System.Drawing.Point(538, 359);
+            this.cboDepartamento.Location = new System.Drawing.Point(103, 249);
             this.cboDepartamento.Name = "cboDepartamento";
-            this.cboDepartamento.Size = new System.Drawing.Size(121, 21);
+            this.cboDepartamento.Size = new System.Drawing.Size(156, 21);
             this.cboDepartamento.TabIndex = 118;
             // 
             // cboProvincia
             // 
             this.cboProvincia.FormattingEnabled = true;
-            this.cboProvincia.Location = new System.Drawing.Point(385, 360);
+            this.cboProvincia.Location = new System.Drawing.Point(104, 222);
             this.cboProvincia.Name = "cboProvincia";
-            this.cboProvincia.Size = new System.Drawing.Size(121, 21);
+            this.cboProvincia.Size = new System.Drawing.Size(155, 21);
             this.cboProvincia.TabIndex = 117;
             this.cboProvincia.SelectedIndexChanged += new System.EventHandler(this.cboProvincia_SelectedIndexChanged);
+            // 
+            // TxtLocalidad
+            // 
+            this.TxtLocalidad.Location = new System.Drawing.Point(103, 273);
+            this.TxtLocalidad.Name = "TxtLocalidad";
+            this.TxtLocalidad.Size = new System.Drawing.Size(156, 20);
+            this.TxtLocalidad.TabIndex = 120;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(24, 273);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(53, 13);
+            this.label8.TabIndex = 119;
+            this.label8.Text = "Localidad";
             // 
             // frmListadoClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1012, 422);
+            this.Controls.Add(this.TxtLocalidad);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.cboDepartamento);
             this.Controls.Add(this.cboProvincia);
             this.Controls.Add(this.btnCrear);
@@ -422,9 +408,7 @@ namespace Colmena.Vista.Vista.FormularioCliente
             this.Controls.Add(this.label13);
             this.Controls.Add(this.TxtMail);
             this.Controls.Add(this.TxtTelefono);
-            this.Controls.Add(this.TxtProvincia);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.TxtLocalidad);
             this.Controls.Add(this.TxtPiso);
             this.Controls.Add(this.TxtBarrio);
             this.Controls.Add(this.label4);
@@ -432,9 +416,7 @@ namespace Colmena.Vista.Vista.FormularioCliente
             this.Controls.Add(this.label6);
             this.Controls.Add(this.TxtOcupacion);
             this.Controls.Add(this.TxtCalle);
-            this.Controls.Add(this.TxtDepartamento);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label11);
@@ -459,9 +441,7 @@ namespace Colmena.Vista.Vista.FormularioCliente
 
         private System.Windows.Forms.TextBox TxtMail;
         private System.Windows.Forms.TextBox TxtTelefono;
-        private System.Windows.Forms.TextBox TxtProvincia;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox TxtLocalidad;
         private System.Windows.Forms.TextBox TxtPiso;
         private System.Windows.Forms.TextBox TxtBarrio;
         private System.Windows.Forms.Label label4;
@@ -469,9 +449,7 @@ namespace Colmena.Vista.Vista.FormularioCliente
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox TxtOcupacion;
         private System.Windows.Forms.TextBox TxtCalle;
-        private System.Windows.Forms.TextBox TxtDepartamento;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
@@ -479,10 +457,10 @@ namespace Colmena.Vista.Vista.FormularioCliente
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblDocumento;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.TextBox TxtNombre;
         private System.Windows.Forms.TextBox TxtApellido;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox TxtDocumento;
         private System.Windows.Forms.DataGridView DgvClientes;
         private System.Windows.Forms.Button btnGuardar;
@@ -494,5 +472,7 @@ namespace Colmena.Vista.Vista.FormularioCliente
         private System.Windows.Forms.Button btnCrear;
         private System.Windows.Forms.ComboBox cboDepartamento;
         private System.Windows.Forms.ComboBox cboProvincia;
+        private System.Windows.Forms.TextBox TxtLocalidad;
+        private System.Windows.Forms.Label label8;
     }
 }

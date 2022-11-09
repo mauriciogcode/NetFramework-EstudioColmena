@@ -57,11 +57,6 @@ namespace Colmena.Datos.QuerysConectios.Utils
 
             sqlCnn.Close();
             return ds.Tables[0];
-
-
-
-
-
         }
     }
 
