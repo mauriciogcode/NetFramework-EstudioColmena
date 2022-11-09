@@ -68,7 +68,7 @@ namespace Colmena.Vista.Formularios.Seguimiento
 
                 if (String.IsNullOrEmpty(txtComentario.Text) || String.IsNullOrWhiteSpace(txtComentario.Text))
                 {
-                    MessageBox.Show($"El comentario es un campo obligatorio");
+                    MessageBox.Show($"El comentario es un campo obligatorio","Campo Obligatorio", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -86,7 +86,7 @@ namespace Colmena.Vista.Formularios.Seguimiento
 
 
                         oSeguimientoNegocio.Insert(obe);
-                        MessageBox.Show("Seguimiento realizado exitosamente");
+                        MessageBox.Show("Seguimiento realizado exitosamente", "Evento", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     }
                     else
@@ -102,7 +102,7 @@ namespace Colmena.Vista.Formularios.Seguimiento
 
 
                         oSeguimientoNegocio.Update(obe);
-                        MessageBox.Show("Seguimiento modificado exitosamente");
+                        MessageBox.Show("Seguimiento modificado exitosamente", "Evento", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
                     DataTable dt = oSeguimientoNegocio.GetAll();
